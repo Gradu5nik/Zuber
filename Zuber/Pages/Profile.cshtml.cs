@@ -12,7 +12,7 @@ namespace Zuber.Pages
 {
     public class ProfileModel : PageModel
     {
-        IUserService service;
+        public IUserService service;
         public SingletonUser User;
         [BindProperty]
         public ZuberUser editableUser { get; set; }
@@ -34,7 +34,7 @@ namespace Zuber.Pages
                 return RedirectToPage("Login");
             }
         }
-        public IActionResult OnPost()
+        public IActionResult OnPostSave()
         {
             if (!ModelState.IsValid)
             {
@@ -43,6 +43,12 @@ namespace Zuber.Pages
             service.UpdateZuberUser(editableUser);
             User.Login(editableUser);
             return RedirectToPage("Index");
+        }
+
+        public IActionResult OnPostDelete()
+        {
+            service.DeleteZuberUser(User.User.Email);
+            return RedirectToPage("Logout");
         }
     }
 }
