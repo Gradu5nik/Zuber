@@ -25,6 +25,11 @@ namespace Zuber.Services.EFServices
             service.Users.Remove(GetZuberUser(email));
             service.SaveChanges();
         }
+        public void UpdateZuberUser(ZuberUser user)
+        {
+            service.Users.Update(user);
+            service.SaveChanges();
+        }
 
         public List<ZuberUser> GetAllUsers()
         {

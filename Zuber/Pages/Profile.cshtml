@@ -1,0 +1,32 @@
+﻿@page
+@model Zuber.Pages.ProfileModel
+@{
+}
+<h1>Profile</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="@Model.editableUser.Id" />
+            <input type="hidden" asp-for="@Model.editableUser.Password" />
+            <div class="form-group">
+                <label asp-for="@Model.editableUser.Name" class="control-label"></label>
+                <input asp-for="@Model.editableUser.Name" class="form-control" />
+                <span asp-validation-for="@Model.editableUser.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.editableUser.Email" class="control-label"></label>
+                <input asp-for="@Model.editableUser.Email" class="form-control" />
+                <span asp-validation-for="@Model.editableUser.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.editableUser.PhoneNo" class="control-label"></label>
+                <input asp-for="@Model.editableUser.PhoneNo" class="form-control" />
+                <span asp-validation-for="@Model.editableUser.PhoneNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

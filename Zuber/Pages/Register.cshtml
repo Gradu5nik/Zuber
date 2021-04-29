@@ -1,0 +1,37 @@
+﻿@page
+@model Zuber.Pages.RegisterModel
+@{
+}
+<h1>Register</h1>
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group input-group">
+
+        <input asp-for="@Model.newUser.Name" class="form-control" placeholder="Full name" type="text">
+        <span asp-validation-for="@Model.newUser.Name" class="text-danger"></span>    
+        </div> <!-- form-group// -->
+    <div class="form-group input-group">
+
+        <input asp-for="@Model.newUser.Email" class="form-control" placeholder="Email address" type="email">
+        <span asp-validation-for="@Model.newUser.Email" class="text-danger"></span>
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+
+        <input asp-for="@Model.newUser.PhoneNo" class="form-control" placeholder="Phone Number" type="text">
+        <span asp-validation-for="@Model.newUser.PhoneNo" class="text-danger"></span>
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+
+        <input asp-for="@Model.newUser.Password" class="form-control" placeholder="Create password" type="password">
+        <span asp-validation-for="@Model.newUser.Password" class="text-danger"></span>
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+
+        <input asp-for="@Model.newUser.ConfirmPassword" class="form-control" placeholder="Repeat password" type="password">
+        <span asp-validation-for="@Model.newUser.ConfirmPassword" class="text-danger"></span>
+    </div> <!-- form-group// -->
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+    </div> <!-- form-group// -->
+    <p class="text-center">Have an account? <a href="">Log In</a> </p>
+</form>
