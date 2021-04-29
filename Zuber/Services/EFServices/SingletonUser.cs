@@ -9,10 +9,27 @@ namespace Zuber.Services.EFServices
     public class SingletonUser
     {
         public ZuberUser User { get; set; }
+        public bool SignedIn
+        {
+            get
+            {
+                if (User == null) return false;
+                else return true;
+            }
+        }
 
         public SingletonUser()
         {
 
+        }
+
+        public void Login(ZuberUser user)
+        {
+            User = user;
+        }
+        public void Logout()
+        {
+            User = null;
         }
     }
 }

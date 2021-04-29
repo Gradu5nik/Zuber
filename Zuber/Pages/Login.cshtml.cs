@@ -29,7 +29,7 @@ namespace Zuber.Pages
             ZuberUser user = service.GetZuberUser(input.Email);
             if (user != null & user.Password == input.Password)
             {
-                User.User = user;
+                User.Login(user);
                 //IdentityService.Identity.Login(user);
                 return RedirectToPage("Index");
             }

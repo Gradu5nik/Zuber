@@ -2,29 +2,27 @@
 }
 @using Zuber.Services.EFServices;
 @inject SingletonUser s
+
 <ul class="navbar-nav">
-    @if (s.User != null)
-{
-<li class="nav-item">
-    <a class="nav-link text-dark" asp-page="profile" title="Manage">Hello @s.User.Name!</a>
-</li>
-<li class="nav-item">
-    <button *@ onclick="logout()" class="nav-link btn btn-link text-dark">Logout</button>
-    <script>
-                                    function logout() {
-                                        /*Logout implementation*/
-                                        window.location.reload();
-                                    }
-    </script>
-</li>
-}
-else
-{
-@*<li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </li>*@
-<li class="nav-item">
-    <a class="nav-link text-dark" asp-page="Login">Login</a>
-</li>
-}
+    @if (s.SignedIn)
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-page="profile" title="Manage">Hello @s.User.Name!</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-page="Logout">Logout</a>
+
+        </li>
+    }
+    else
+    {
+        @*<li class="nav-item">
+               <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </li>*@
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-page="Login">Login</a>
+        </li>
+    }
 </ul>
+<script src="~/js/PartialLogin.js">   </script>
+ 

@@ -22,7 +22,8 @@ namespace Zuber.Pages
 
         public IActionResult OnGet()
         {
-            if (User.User == null)
+            //if (User.User==null)
+            if (!User.SignedIn)
             {
                 return RedirectToPage("Login");
             }
