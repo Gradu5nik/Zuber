@@ -27,7 +27,7 @@ namespace Zuber.Pages
         public IActionResult OnPost()
         {
             ZuberUser user = service.GetZuberUser(input.Email);
-            if (user != null & user.Password == input.Password)
+            if (user != null && user.Password == input.Password)
             {
                 User.Login(user);
                 //IdentityService.Identity.Login(user);
