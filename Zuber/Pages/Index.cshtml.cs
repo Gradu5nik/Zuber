@@ -5,21 +5,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Zuber.Services.EFServices;
 
 namespace Zuber.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        public SingletonUser User;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, SingletonUser s)
         {
             _logger = logger;
+            User = s;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-
+            //if (User.User==null)
+            if (!User.SignedIn)
+            {
+                return RedirectToPage("Login");
+            }
+            return Page();
         }
     }
 }

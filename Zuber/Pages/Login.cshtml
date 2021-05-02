@@ -1,0 +1,24 @@
+﻿@page
+@model Zuber.Pages.LoginModel
+@{
+}
+<form method="post">
+    <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input asp-for="@Model.input.Email" type="text" placeholder="Enter your email" required>
+        <span asp-validation-for="@Model.input.Email" class="text-danger"></span>
+        <label for="psw"><b>Password</b></label>
+        <input asp-for="@Model.input.Password" type="password" placeholder="Enter Password" required>
+        <span asp-validation-for="@Model.input.Password" class="text-danger"></span>
+        <button type="submit">Login</button>
+        <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+    <a asp-page="Register">Register</a>
+</form>
