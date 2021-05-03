@@ -1,0 +1,45 @@
+﻿@page
+@model Zuber.Pages.MapViewModel
+@{
+    ViewData["Title"] = "MapView";
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zuber map</title>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zuber Map demo</h1>
+    <div id="map"></div>
+    <script>
+        //Initiates map at 14x zoom and centers it around Zealand
+        function initMap() {
+            var options = {
+                zoom: 14,
+                center: { lat: 55.630649, lng: 12.078271 }
+            }
+            var map = new
+                google.maps.Map(document.getElementById('map'), options);
+            var marker = new google.maps.Marker({
+                position: { lat: 55.630649, lng: 12.078271 },
+                map: map,
+                icon: 'https://www.4icu.org/i/logos-seals/18331.png'  //getting the current icon from web, probably should store it locally
+            });
+
+            //bellow this should be function that displays other markers - to be implemented
+        }
+    </script>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlDbHvsR_UCWhLCkzQUeDb2ojZFY-4kB4&callback=initMap&libraries=&v=weekly"
+            async></script>
+</body>
+</html>
