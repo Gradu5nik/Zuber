@@ -27,5 +27,7 @@ namespace Zuber.Models
         [Display(Name = "Password")]
         public string Password { get; set; }
         
+        public bool Driver { get; set; }
+        
     }
 }

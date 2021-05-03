@@ -35,6 +35,7 @@ namespace Zuber.Pages
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            public bool Driver { get; set; }
         }
         IUserService service;
         SingletonUser User;
@@ -60,6 +61,7 @@ namespace Zuber.Pages
             NewToDatabase.Email = newUser.Email;
             NewToDatabase.PhoneNo = newUser.PhoneNo;
             NewToDatabase.Password = newUser.Password;
+            NewToDatabase.Driver = newUser.Driver;
             service.AddZuberUser(NewToDatabase);
             User.Login(service.GetZuberUser(NewToDatabase.Email));
             return RedirectToPage("Index");

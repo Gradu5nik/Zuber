@@ -24,6 +24,11 @@
                 <input asp-for="@Model.editableUser.PhoneNo" class="form-control" />
                 <span asp-validation-for="@Model.editableUser.PhoneNo" class="text-danger"></span>
             </div>
+            <div class="custom-control custom-switch">
+
+                <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.editableUser.Driver">
+                <label class="custom-control-label" for="switch">Are you driving?</label>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" asp-page-handler ="Save" class="btn btn-primary" />
             </div>
