@@ -13,5 +13,6 @@ namespace Zuber.Services.Interfaces
         public void DeleteZuberUser(string email);
         public List<ZuberUser> GetAllUsers();
         public ZuberUser GetZuberUser(string email);
+        public ZuberUser GetZuberUserById(int id);
     }
 }

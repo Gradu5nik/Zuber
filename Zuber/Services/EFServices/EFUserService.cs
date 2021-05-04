@@ -40,5 +40,10 @@ namespace Zuber.Services.EFServices
         {
             return service.Users.Where(x => x.Email == email).FirstOrDefault();
         }
+
+        public ZuberUser GetZuberUserById(int id)
+        {
+            return service.Users.Where(x => x.Id == id).FirstOrDefault();
+        }
     }
 }
