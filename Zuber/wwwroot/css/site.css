@@ -70,8 +70,8 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 .loginbox {
-    width: 320px;
-    height: 600px;
+    width:320px;
+    height:700px;
     background: rgb(111, 203, 219);
     color: rgb(255, 255, 255);
     top: 50%;
@@ -135,8 +135,8 @@ body {
         text-align: center;
     }
 .zia {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     position: relative;
     top: -50px;
