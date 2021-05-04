@@ -14,14 +14,15 @@ namespace Zuber.Models
         [ForeignKey("Ride")]
         public int RideID { get; set; }
         [ForeignKey("ZuberUser")]
-        public int ZuberUserID { get; set; }
+        public int? ZuberUserID { get; set; }
 
         [Required]
         public Ride Ride { get; set; }
         //[Required]
         //OnDeleteCascade removed from this property because SQL complains
+        //also made property nullabe to make on delete no action
         // Therefore after deleting user we musst manually delet all passanger instances of the user
-        public ZuberUser ZuberUser{get;set;}
+        public ZuberUser? ZuberUser{get;set;}
 
     }
 }

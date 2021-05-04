@@ -10,8 +10,8 @@ using Zuber.Models;
 namespace Zuber.Migrations
 {
     [DbContext(typeof(ZuberDBContext))]
-    [Migration("20210504110248_almostFinal")]
-    partial class almostFinal
+    [Migration("20210504111607_finalhope")]
+    partial class finalhope
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,7 +61,7 @@ namespace Zuber.Migrations
                     b.Property<int>("RideID")
                         .HasColumnType("int");
 
-                    b.Property<int>("ZuberUserID")
+                    b.Property<int?>("ZuberUserID")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -158,9 +158,7 @@ namespace Zuber.Migrations
 
                     b.HasOne("Zuber.Models.ZuberUser", "ZuberUser")
                         .WithMany()
-                        .HasForeignKey("ZuberUserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ZuberUserID");
 
                     b.Navigation("Ride");
 

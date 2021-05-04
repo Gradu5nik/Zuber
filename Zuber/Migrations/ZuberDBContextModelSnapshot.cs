@@ -59,7 +59,7 @@ namespace Zuber.Migrations
                     b.Property<int>("RideID")
                         .HasColumnType("int");
 
-                    b.Property<int>("ZuberUserID")
+                    b.Property<int?>("ZuberUserID")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -156,9 +156,7 @@ namespace Zuber.Migrations
 
                     b.HasOne("Zuber.Models.ZuberUser", "ZuberUser")
                         .WithMany()
-                        .HasForeignKey("ZuberUserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ZuberUserID");
 
                     b.Navigation("Ride");
 
