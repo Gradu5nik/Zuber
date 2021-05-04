@@ -28,6 +28,9 @@ namespace Zuber.Models
         public string Password { get; set; }
         
         public bool Driver { get; set; }
+
+
+        //public Ride Ride { get; set; }
         
     }
 }
