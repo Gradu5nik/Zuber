@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Zuber.Models;
 
 namespace Zuber.Migrations
 {
     [DbContext(typeof(ZuberDBContext))]
-    partial class ZuberDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210504110248_almostFinal")]
+    partial class almostFinal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
