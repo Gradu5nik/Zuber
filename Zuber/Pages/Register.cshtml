@@ -32,12 +32,12 @@
         <input asp-for="@Model.newUser.ConfirmPassword" class="form-control" placeholder="Repeat password" type="password">
         <span asp-validation-for="@Model.newUser.ConfirmPassword" class="text-danger"></span>
         <!--</div>--> <!-- form-group// -->
-        <!--<div class="form-group input-group custom-switch">-->
+        <div class="form-group input-group custom-switch">
 
         <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.newUser.Driver">
         <label class="custom-control-label" for="switch">Will you be driving? (you can always change this parameter in profile settings later)</label><br />
-        @*</div>
-            <div class="form-group ">*@
+        </div>
+            @*<div class="form-group ">*@
         <button type="submit"> Create Account </button><br /><br />
         <!--</div>--> <!-- form-group// -->
         <p class="text-center">Have an account? <a href="" style="border: none; outline: none; height: 40px; background: #f7fb25; font-size: 18px; border-radius: 20px;">Log In</a> </p>

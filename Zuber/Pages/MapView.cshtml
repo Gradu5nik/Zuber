@@ -18,10 +18,17 @@
 </head>
 <body>
     <h1>Zuber Map demo</h1>
+    @foreach (var dot in Model.Dots)
+    {
+        <h1>@dot.Lat , @dot.Long</h1>
+    }
     <div id="map"></div>
     <script>
-        //Initiates map at 14x zoom and centers it around Zealand
+
+
+       //Initiates map at 14x zoom and centers it around Zealand
         function initMap() {
+            
             var options = {
                 zoom: 14,
                 center: { lat: 55.630649, lng: 12.078271 }
@@ -32,10 +39,38 @@
                 position: { lat: 55.630649, lng: 12.078271 },
                 map: map,
                 icon: 'https://www.4icu.org/i/logos-seals/18331.png'  //getting the current icon from web, probably should store it locally
-            });
 
+
+            });
+            var DotList = []
+            @(Model.counter = 0)
+            for (let i = 0; i <@Model.Dots.Count(); i++) {
+                DotList[i] = {
+                    lat: @Model.Dots[Model.counter].Lat,
+                    long: @Model.Dots[Model.counter].Long,
+                    hour:@Model.Dots[Model.counter].Time.Hour,
+                    minute:@Model.Dots[Model.counter].Time.Minute,
+                    description:'@Model.Dots[Model.counter].Description'
+                }
+                @(Model.counter++)
+            }
+            function createMarker(map, lat, long) {
+                new google.maps.Marker({
+                    position: { lat: lat, lng: long },
+                    map: map,
+                });
+            }
+            DotList.forEach((item, index, arr) => {
+                createMarker(map, arr[index].lat, arr[index].long);
+            });
             //bellow this should be function that displays other markers - to be implemented
+
+            @*@foreach (var dot in Model.Dots)
+            {
+                Html.Raw("createMarker(map, " + @dot.Lat + "," + @dot.Long + ");");
+            }*@
         }
+
     </script>
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
