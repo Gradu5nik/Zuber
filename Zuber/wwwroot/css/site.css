@@ -6,22 +6,135 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
+.navbar {
+    background: #000000;
+    padding: 1rem 8rem;
+    z-index: 1000;
+}
+
+.navbar .navbar-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-child(n) > a {
+    color: #e6ab09;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+}
+
+body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-child(n) > a:hover {
+    color: #fff;
+}
+
+
+.mid .hero {
+    position:relative;
+}
+
+#input_Email {
+    text-align: center;
+}
+
+.fromm-control {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-color: #000000 !important;
+    border-width: 0 0 1px 0 !important;
+    padding: 0px !important;
+    color: #495057;
+    height: auto;
+    border-radius: 0;
+    background-color: fff;
+    background-clip: padding-box;
+
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    background: #e6ab09;
+}
+
+}
+
+
+.mid .hero h2 {
+    width: 100%;
+    font-weight: bold !important;
+    letter-spacing: 0.2px;
+    padding-top: 0.1rem;
+}
+
+.mid .hero p{
+    width: 55%;
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+    padding-bottom: 1.1rem;
+}
+.mid .hero a {
+    background: #000000;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    text-decoration: none
+}
+
+.container {
+    text-align: center;
+    position: center;
+}
+
+
+
+.mid {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.mid video {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 /* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
+
+
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    background: #000000;
+    border-color: transparent;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    text-decoration: none;
+  }
+
+#input_Email
+
+.btn-primary:hover {
+    background: #e6ab09;
+    border-color: transparent;
 }
 
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #e6ab09;
+    border-color: transparent;
 }
 
 /* Sticky footer styles
@@ -69,76 +182,8 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
-.loginbox {
-    width:320px;
-    height:700px;
-    background: rgb(111, 203, 219);
-    color: rgb(255, 255, 255);
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    box-sizing: border-box;
-    padding: 20px 20px;
-}
 
-    .loginbox input {
-        width: 100%;
-        margin-bottom: 20px;
-    }
 
-        .loginbox input[type="text"], input[type ="password"] {
-            border: none;
-            border-bottom: 1px solid #fff;
-            background: transparent;
-            outline: none;
-            height: 40px;
-            color: #fff;
-            font-size: 16px;
-        }
 
-        .loginbox input[type="submit"] {
-            border: none;
-            outline: none;
-            height: 40px;
-            background: #f7fb25;
-            font-size: 18px;
-            border-radius: 20px;
-        }
+    
 
-            .loginbox input [type="submit"]:hover {
-                cursor: pointer;
-                background: #ffc107;
-                color: #000;
-            }
-
-    .loginbox a {
-        text-decoration: none;
-        font-size: 12px;
-        line-height: 20px;
-        color: white;
-    }
-
-        .loginbox a:hover {
-            color: #ffc107;
-            
-        }
-
-    .loginbox button {
-        border: none;
-        outline: none;
-        height: 40px;
-        width: 250px;
-        background: #f7fb25;
-        font-size: 18px;
-        border-radius: 20px;
-        text-align: center;
-    }
-.zia {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    position: relative;
-    top: -50px;
-    left: calc(50%-50px);
-}
