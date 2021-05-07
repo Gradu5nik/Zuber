@@ -16,6 +16,8 @@ namespace Zuber.Pages
         public SingletonUser User;
         [BindProperty]
         public ZuberUser input { get; set; }
+        [BindProperty]
+        public bool failedLogin { get; set; }
         public LoginModel(IUserService s, SingletonUser su)
         {
             service = s;
@@ -33,6 +35,7 @@ namespace Zuber.Pages
                 //IdentityService.Identity.Login(user);
                 return RedirectToPage("Index");
             }
+            failedLogin = true;
             return Page();
         }
     }

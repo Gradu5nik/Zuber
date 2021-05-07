@@ -7,39 +7,34 @@
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="loginbox">
         <img src="~/Images/carpool2.jpg" class="zia" />
-        <h1>Register Here</h1>
-
+        <div class="container" padding-bottom: 0px;>
+            <h1>Register Here</h1>
+        </div>
         <input asp-for="@Model.newUser.Name" class="form-control" placeholder="Full name" type="text">
         <span asp-validation-for="@Model.newUser.Name" class="text-danger"></span>
-        <!--</div>--> <!-- form-group// -->
-        @*<div class="form-group input-group">*@
+        
 
         <input asp-for="@Model.newUser.Email" class="form-control" placeholder="Email address" type="email">
         <span asp-validation-for="@Model.newUser.Email" class="text-danger"></span>
-        <!--</div>--> <!-- form-group// -->
-        <!--<div class="form-group input-group">-->
+        
 
         <input asp-for="@Model.newUser.PhoneNo" class="form-control" placeholder="Phone Number" type="text">
         <span asp-validation-for="@Model.newUser.PhoneNo" class="text-danger"></span>
-        <!--</div>--> <!-- form-group// -->
-        <!--<div class="form-group input-group">-->
-
+        
         <input asp-for="@Model.newUser.Password" class="form-control" placeholder="Create password" type="password">
         <span asp-validation-for="@Model.newUser.Password" class="text-danger"></span>
-        <!--</div>--> <!-- form-group// -->
-        <!--<div class="form-group input-group">-->
+       
 
         <input asp-for="@Model.newUser.ConfirmPassword" class="form-control" placeholder="Repeat password" type="password">
         <span asp-validation-for="@Model.newUser.ConfirmPassword" class="text-danger"></span>
-        <!--</div>--> <!-- form-group// -->
+        
         <div class="form-group input-group custom-switch">
-
-        <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.newUser.Driver">
-        <label class="custom-control-label" for="switch">Will you be driving? (you can always change this parameter in profile settings later)</label><br />
+            <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.newUser.Driver">
+            <label class="custom-control-label" for="switch">Will you be driving? (you can always change this parameter in profile settings later)</label><br />
         </div>
-            @*<div class="form-group ">*@
+         
         <button type="submit"> Create Account </button><br /><br />
-        <!--</div>--> <!-- form-group// -->
+        
         <p class="text-center">Have an account? <a href="" style="border: none; outline: none; height: 40px; background: #f7fb25; font-size: 18px; border-radius: 20px;">Log In</a> </p>
     </div>
 </form>

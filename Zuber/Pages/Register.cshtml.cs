@@ -16,14 +16,19 @@ namespace Zuber.Pages
         public class InputModel
         {
             [Required]
+            [RegularExpression(@"^[A-Za-z]+\s?[A-Za-z]*$",ErrorMessage ="Please, insert your name using only letters")]
             public string Name { get; set; }
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
+            [RegularExpression(@"^[A-Z0-9a-z._%+-]+@[A-Z0-9a-z.-]+\.[A-Za-z]{2,}$.", ErrorMessage = "Please, enter valid email adress")]
+            //[RegularExpression(@"^[A-Z0-9a-z._%+-]+@edu\.easj\.dk"),ErrorMessage ="Please, enter your Zealand email adress"] version for zealand students mails
+            //[RegularExpression(@"^[a-z]{4}[0-9]{4}@edu\.easj\.dk"),ErrorMessage ="Please, enter your Zealand email adress] stricter version for studentmails
             public string Email { get; set; }
             
             [Required]
             [Phone]
+            [RegularExpression(@"^/+?[0-9]{3,15}$.", ErrorMessage = "Please, enter valid phone number")]
             public string PhoneNo { get; set; }
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
