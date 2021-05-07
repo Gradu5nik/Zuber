@@ -22,7 +22,8 @@ namespace Zuber.Pages
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
-            [RegularExpression(@"^[A-Z0-9a-z._%+-]+@[A-Z0-9a-z.-]+\.[A-Za-z]{2,}$.", ErrorMessage = "Please, enter valid email adress")]
+            [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Please, enter valid email adress")]
+            //[RegularExpression(@"^[A-Z0-9a-z._%+-]+@[A-Z0-9a-z.-]+\.[A-Za-z]{2,}$.", ErrorMessage = "Please, enter valid email adress")]
             //[RegularExpression(@"^[A-Z0-9a-z._%+-]+@edu\.easj\.dk"),ErrorMessage ="Please, enter your Zealand email adress"] version for zealand students mails
             //[RegularExpression(@"^[a-z]{4}[0-9]{4}@edu\.easj\.dk"),ErrorMessage ="Please, enter your Zealand email adress] stricter version for studentmails
             public string Email { get; set; }

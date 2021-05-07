@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Zuber.Models;
 using Zuber.Services.Interfaces;
 
@@ -16,6 +17,7 @@ namespace Zuber.Services.EFServices
         }
         public void AddZuberUser(ZuberUser user)
         {
+            user.Password = PasswordHash(user.Email, user.Password);
             service.Users.Add(user);
             service.SaveChanges();
         }
@@ -27,6 +29,7 @@ namespace Zuber.Services.EFServices
         }
         public void UpdateZuberUser(ZuberUser user)
         {
+            user.Password = PasswordHash(user.Email, user.Password);
             service.Users.Update(user);
             service.SaveChanges();
         }
@@ -45,5 +48,14 @@ namespace Zuber.Services.EFServices
         {
             return service.Users.Where(x => x.Id == id).FirstOrDefault();
         }
+
+        public string PasswordHash(string userEmail, string password)
+        {
+            PasswordHasher<string> pw = new PasswordHasher<string>();
+            string passwordHashed = pw.HashPassword(userEmail, password);
+            return passwordHashed;
+        }
+
+
     }
 }
