@@ -25,7 +25,8 @@
                         <div class="form-group">
                             <div class="col-ms-12">
                                 <input class="form-control" asp-for="@Model.input.Password" type="password" placeholder=" Password" required>
-                                <span asp-validation-for="@Model.input.Password"></span>
+                                @*<span asp-validation-for="@Model.input.Password"></span>*@
+                                @if (Model.failedLogin) { <span >Your login or password are incorrect</span>}
                             </div>
                         </div>
 
