@@ -29,6 +29,7 @@ namespace Zuber.Pages
                 editableUser = User.User;
                 return Page();
             }
+            //Anything
             else
             {
                 return RedirectToPage("Login");

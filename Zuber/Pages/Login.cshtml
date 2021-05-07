@@ -3,56 +3,60 @@
 @{
 }
 
-<form method="post">
+    <div class="mid">
+        <video autoplay muted loop>
+            <source class="embed-responsive" src="Video/video1.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero text-center">
+            <h2 class="text-light display-4">Welcome to Zuber</h2>
+            <p class="text-light mx-auto">Sign into your account</p>
+        
+            <div class="col-sm-4">
+                <form method="post">
+                    <div class="container">
+                        <div class="form-group">
+                            <div class="col-ms-12">
+                                <input class="form-control"  asp-for="@Model.input.Email" type="text" placeholder="E-mail" required>
+                                <span asp-validation-for="@Model.input.Email"></span>
+                            </div>
+                        </div>
 
-    <div class="loginbox">
-        <img src="~/Images/avatar.png" class="zia" />
-        <h1>Login here</h1>
-        <label for="uname"><b>Username</b></label>
-        <input asp-for="@Model.input.Email" type="text" placeholder="Enter your email" required>
-        <span asp-validation-for="@Model.input.Email" class="text-danger"></span>
-        <label for="psw"><b>Password</b></label>
-        <input asp-for="@Model.input.Password" type="password" placeholder="Enter Password" required>
-        @*<span asp-validation-for="@Model.input.Password" class="text-danger"></span>*@
-        @if (Model.failedLogin)
-        {
-            <span  class="text-danger"> Incorect email or password</span>
-        }
-        <button type="submit">Login</button><br /><br />
-        <button type="button" class="cancelbtn" style="background:#f7fb25">Cancel</button><br />
+                        <div class="form-group">
+                            <div class="col-ms-12">
+                                <input class="form-control" asp-for="@Model.input.Password" type="password" placeholder=" Password" required>
+                                <span asp-validation-for="@Model.input.Password"></span>
+                            </div>
+                        </div>
 
-        @*<button type="button" class="cancelbtn">Cancel</button><br />*@
-        <label>
-            <input type="checkbox" checked="checked" name="remember">Remember me
-        </label>
-        <br />
+                        <div class="form-group">
+                            <div class="col-ms-12">
+                                <button type="submit" class="btn btn-primary">Login</button><br/><br/>
+                            </div>
+                        </div>
+                    </div>
 
 
-        @*<div class="container" style="background-color:#f1f1f1">*@
+                    
 
 
-        <span class="psw">Forgot <a href="#">PASSWORD?</a></span><br /><br /><br /><br />
+                </form>
+            </div>
 
 
+        </div>
 
-        <a asp-page="Register" style="color:black">Register</a>
     </div>
-</form>
+    
+
+
+
+
+
 <!doctype html>
 <html>
 <head>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url(/Images/Zealand.jpg);background-size:cover;
-            background-position: center;
-            font-family: sans-serif;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-        }
-    </style>
- </head>
+</head>
+
 </html>
 
