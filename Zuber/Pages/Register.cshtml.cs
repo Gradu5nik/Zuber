@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Zuber.Models;
 using Zuber.Services.EFServices;
 using Zuber.Services.Interfaces;
+using Zuber.CustomAtributes;
 
 namespace Zuber.Pages
 {
@@ -28,12 +29,13 @@ namespace Zuber.Pages
             
             [Required]
             [Phone]
-            [RegularExpression(@"^/+?[0-9]{3,15}$.", ErrorMessage = "Please, enter valid phone number")]
+            [RegularExpression(@"^\+?[0-9]{3,15}$", ErrorMessage = "Please, enter valid phone number")]
             public string PhoneNo { get; set; }
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
+            [PasswordFoolproof("Name","Email","PhoneNo")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
