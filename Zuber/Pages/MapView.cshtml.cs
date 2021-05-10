@@ -14,15 +14,18 @@ namespace Zuber.Pages
     {
         public SingletonUser User;
         public IDotService dService;
+        public JsonDotService jSon;
         [BindProperty]
         public int counter { get; set; }
         [BindProperty]
         public List<Dot> Dots { get; set; }
-        public MapViewModel( SingletonUser s, IDotService d)
+        public MapViewModel( SingletonUser s, IDotService d,JsonDotService j)
         {
             User = s;
             dService = d;
             Dots = d.GetAllDots();
+            jSon = j;
+            jSon.UpdateJson();
         }
         public IActionResult OnGet()
         {

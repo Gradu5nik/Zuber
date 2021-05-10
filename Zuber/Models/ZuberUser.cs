@@ -13,12 +13,15 @@ namespace Zuber.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
+        [RegularExpression(@"^[A-Za-z]+\s?[A-Za-z]*$", ErrorMessage = "Please, insert your name using only letters")]
         public string Name { get; set; }
         [EmailAddress]
         [Required]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Please, enter valid email adress")]
         public string Email { get; set; }
         [Phone]
         [Required]
+        [RegularExpression(@"^\+?[0-9]{3,15}$", ErrorMessage = "Please, enter valid phone number")]
         public string PhoneNo { get; set; }
         //password needs to be hashed
         [Required]

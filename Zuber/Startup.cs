@@ -30,6 +30,7 @@ namespace Zuber
             services.AddRazorPages();
             services.AddTransient<IUserService, EFUserService>();
             services.AddTransient<IDotService, EFDotService>();
+            services.AddTransient<JsonDotService, JsonDotService>();
             services.AddSingleton<SingletonUser, SingletonUser>();
             services.AddDbContext<ZuberDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ZuberContext")));
         }
