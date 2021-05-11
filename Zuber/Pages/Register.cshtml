@@ -2,57 +2,241 @@
 @model Zuber.Pages.RegisterModel
 @{
 }
-<h1>Register</h1>
-<form method="post">
-    <div asp-validation-summary="All" class="text-danger"></div>
-    <div class="loginbox">
-        <img src="~/Images/carpool2.jpg" class="zia" />
-        <div class="container" padding-bottom: 0px;>
-            <h1>Register Here</h1>
+@*<h1>Register</h1>
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="loginbox">
+            <img src="~/Images/carpool2.jpg" class="zia" />
+            <div class="container" padding-bottom: 0px;>
+                <h1>Register Here</h1>
+            </div>
+            <input asp-for="@Model.newUser.Name" class="form-control" placeholder="Full name" type="text">
+            <span asp-validation-for="@Model.newUser.Name" class="text-danger"></span>
+
+
+            <input asp-for="@Model.newUser.Email" class="form-control" placeholder="Email address" type="email">
+            <span asp-validation-for="@Model.newUser.Email" class="text-danger"></span>
+
+
+            <input asp-for="@Model.newUser.PhoneNo" class="form-control" placeholder="Phone Number" type="text">
+            <span asp-validation-for="@Model.newUser.PhoneNo" class="text-danger"></span>
+
+            <input asp-for="@Model.newUser.Password" class="form-control" placeholder="Create password" type="password">
+            <span asp-validation-for="@Model.newUser.Password" class="text-danger"></span>
+
+
+            <input asp-for="@Model.newUser.ConfirmPassword" class="form-control" placeholder="Repeat password" type="password">
+            <span asp-validation-for="@Model.newUser.ConfirmPassword" class="text-danger"></span>
+
+            <div class="form-group input-group custom-switch">
+                <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.newUser.Driver">
+                <label class="custom-control-label" for="switch">Will you be driving? (you can always change this parameter in profile settings later)</label><br />
+            </div>
+
+            <button type="submit"> Create Account </button><br /><br />
+
+            <p class="text-center">Have an account? <a href="" style="border: none; outline: none; height: 40px; background: #f7fb25; font-size: 18px; border-radius: 20px;">Log In</a> </p>
         </div>
-        <input asp-for="@Model.newUser.Name" class="form-control" placeholder="Full name" type="text">
-        <span asp-validation-for="@Model.newUser.Name" class="text-danger"></span>
-        
+    </form>
+    <!doctype html>
+    <html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url(/Images/Zealand.jpg);
+                background-size: cover;
+                background-position: center;
+                font-family: sans-serif;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+        </style>
+    </head>
+    </html>*@
+/////////////////////////////////////////////////////////////////
 
-        <input asp-for="@Model.newUser.Email" class="form-control" placeholder="Email address" type="email">
-        <span asp-validation-for="@Model.newUser.Email" class="text-danger"></span>
-        
 
-        <input asp-for="@Model.newUser.PhoneNo" class="form-control" placeholder="Phone Number" type="text">
-        <span asp-validation-for="@Model.newUser.PhoneNo" class="text-danger"></span>
-        
-        <input asp-for="@Model.newUser.Password" class="form-control" placeholder="Create password" type="password">
-        <span asp-validation-for="@Model.newUser.Password" class="text-danger"></span>
-       
+@*<h1>Register</h1>
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="loginbox">
+            <div class="container" padding-bottom: 0px;>
+                <h1>Register Here</h1>
+            </div>
+            <input asp-for="@Model.newUser.Name" class="form-control" placeholder="Full name" type="text">
+            <span asp-validation-for="@Model.newUser.Name" class="text-danger"></span>
 
-        <input asp-for="@Model.newUser.ConfirmPassword" class="form-control" placeholder="Repeat password" type="password">
-        <span asp-validation-for="@Model.newUser.ConfirmPassword" class="text-danger"></span>
-        
-        <div class="form-group input-group custom-switch">
-            <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.newUser.Driver">
-            <label class="custom-control-label" for="switch">Will you be driving? (you can always change this parameter in profile settings later)</label><br />
+
+            <input asp-for="@Model.newUser.Email" class="form-control" placeholder="Email address" type="email">
+            <span asp-validation-for="@Model.newUser.Email" class="text-danger"></span>
+
+
+            <input asp-for="@Model.newUser.PhoneNo" class="form-control" placeholder="Phone Number" type="text">
+            <span asp-validation-for="@Model.newUser.PhoneNo" class="text-danger"></span>
+
+            <input asp-for="@Model.newUser.Password" class="form-control" placeholder="Create password" type="password">
+            <span asp-validation-for="@Model.newUser.Password" class="text-danger"></span>
+
+
+            <input asp-for="@Model.newUser.ConfirmPassword" class="form-control" placeholder="Repeat password" type="password">
+            <span asp-validation-for="@Model.newUser.ConfirmPassword" class="text-danger"></span>
+
+            <div class="form-group input-group custom-switch">
+                <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.newUser.Driver">
+                <label class="custom-control-label" for="switch">Will you be driving? (you can always change this parameter in profile settings later)</label><br />
+            </div>
+
+            <button type="submit"> Create Account </button><br /><br />
+
+            <p class="text-center">Have an account? <a href="" style="border: none; outline: none; height: 40px; background: #f7fb25; font-size: 18px; border-radius: 20px;">Log In</a> </p>
         </div>
-         
-        <button type="submit"> Create Account </button><br /><br />
-        
-        <p class="text-center">Have an account? <a href="" style="border: none; outline: none; height: 40px; background: #f7fb25; font-size: 18px; border-radius: 20px;">Log In</a> </p>
+    </form>
+    <!doctype html>
+    <html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url(/Images/Zealand.jpg);
+                background-size: cover;
+                background-position: center;
+                font-family: sans-serif;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+        </style>
+    </head>
+    </html>*@
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Bootstrap</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,intial-scale=1">
+        Latest compiled and minified CSS
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        Optional theme
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link href="/css/global.css" type="text/css" rel="stylesheet">
+
+        Latest compiled and minified JavaScript
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>*@
+
+@*<body style="background-image:url(/Images/car.jpg); margin:0; padding:0; background-size: cover;background-position:center;font-family: sans-serif; color: #fff;">
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+
+                <form method="post" style="border: 0px solid #fff; padding: 20px; border-radius: 10px; margin-top: 8vh; -webkit-box-shadow: -1px 4px 26px 19px rgba(0, 0, 0, 0.75); -moz-box-shadow: -1px 4px 26px 19px rgba(0, 0, 0, 0.75); box-shadow: -1px 4px 26px 19px rgba(0, 0, 0, 0.75);" class="form-container">
+
+                    <h1>Register Here</h1>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Full Name</label>
+                        <input asp-for="@Model.newUser.Name" class="form-control" placeholder="Full name" type="text">
+                        <span asp-validation-for="@Model.newUser.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phone Number</label>
+                        <input asp-for="@Model.newUser.PhoneNo" class="form-control" placeholder="Phone Number" type="text">
+                        <span asp-validation-for="@Model.newUser.PhoneNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Create Password</label>
+                         <input asp-for="@Model.newUser.Password" class="form-control" placeholder="Create password" type="password">
+                <span asp-validation-for="@Model.newUser.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Confirm Password</label>
+                        <input asp-for="@Model.newUser.ConfirmPassword" class="form-control" placeholder="Repeat password" type="password">
+                        <span asp-validation-for="@Model.newUser.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.newUser.Driver">
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Register</button>
+                </form>
+
+
+            </div>
+        </div>
     </div>
-</form>
-<!doctype html>
-<html>
-<head>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url(/Images/Zealand.jpg);
-            background-size: cover;
-            background-position: center;
-            font-family: sans-serif;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-        }
-    </style>
-</head>
-</html>
+    </body>
+    </html>*@
+
+
+<body style="background-image: url(/Images/14.jpg); margin: 0; padding: 0; background-size: cover; background-position: center; font-family: sans-serif; color: #fff;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <form method="post" style="border: 0px solid #fff; padding: 20px; border-radius: 10px; margin-top: 8vh; -webkit-box-shadow: -1px 4px 26px 19px rgba(0, 0, 0, 0.75); -moz-box-shadow: -1px 4px 26px 19px rgba(0, 0, 0, 0.75); box-shadow: -1px 4px 26px 19px rgba(0, 0, 0, 0.75);" class="form-container">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <h1>Register Here</h1>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Full Name</label>
+                        <input asp-for="@Model.newUser.Name" class="form-control" placeholder="Full name" type="text">
+                        <span asp-validation-for="@Model.newUser.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input asp-for="@Model.newUser.Email" class="form-control" placeholder="Email address" type="email">
+                        <span asp-validation-for="@Model.newUser.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Phone Number</label>
+                        <input asp-for="@Model.newUser.PhoneNo" class="form-control" placeholder="Phone Number" type="text">
+                        <span asp-validation-for="@Model.newUser.PhoneNo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassowrd1">Create Password</label>
+                        <input asp-for="@Model.newUser.Password" class="form-control" placeholder="Create password" type="password">
+                        <span asp-validation-for="@Model.newUser.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Confirm Password</label>
+                        <input asp-for="@Model.newUser.ConfirmPassword" class="form-control" placeholder="Repeat password" type="password">
+                        <span asp-validation-for="@Model.newUser.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.newUser.Driver">Are you driving
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Register</button>
+                    
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
