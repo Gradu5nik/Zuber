@@ -1,4 +1,5 @@
 ﻿@page
+@using System.ComponentModel.Design.Serialization
 @model Zuber.Pages.MapViewModel
 @{
     ViewData["Title"] = "MapView";
@@ -26,26 +27,26 @@
     <div id="map"></div>
     <script>
 
-        
+
        //Initiates map at 14x zoom and centers it around Zealand
         function initMap() {
-            
 
-            
+
+
             var options = {
                 zoom: 14,
                 center: { lat: 55.630649, lng: 12.078271 }
             }
             var map = new
                 google.maps.Map(document.getElementById('map'), options);
-            var marker = new google.maps.Marker({
+            var zealandMarker = new google.maps.Marker({
                 position: { lat: 55.630649, lng: 12.078271 },
                 map: map,
                 icon: 'https://www.4icu.org/i/logos-seals/18331.png'  //getting the current icon from web, probably should store it locally
 
 
             });
-            
+
             @*@(Model.counter = 0)
             for (let i = 0; i <@Model.Dots.Count(); i++) {
                 DotList[i] = {
@@ -57,25 +58,31 @@
                 }
                 @(Model.counter++)
             }*@
-            function createMarker(map, lat, long) {
-                new google.maps.Marker({
+            function createMarker(map, lat, long, url) {
+                var marker = new google.maps.Marker({
                     position: { lat: lat, lng: long },
                     map: map,
+                    url: '/GetProfile?id=' + url
+                });
+                google.maps.event.addListener(marker, 'click', function() {
+                    window.location.href = this.url;
+
                 });
             };
-            
+
             //bellow this should be function that displays other markers - to be implemented
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     var DotList = JSON.parse(this.responseText);
                     DotList.forEach((item, index, arr) => {
-                        createMarker(map, arr[index].Lat, arr[index].Long);
+                        createMarker(map, arr[index].Lat, arr[index].Long, arr[index].ZuberUserID);
                     });
                 }
             };
             xmlhttp.open("GET", "/Data/Dots.json", true);
             xmlhttp.send();
+
             
         }
 
