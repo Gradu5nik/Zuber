@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -33,7 +34,7 @@ namespace Zuber.Services.EFServices
 
         public List<Dot> GetAllDots()
         {
-            return service.Dots.ToList<Dot>();
+            return service.Dots.Include(d=>d.ZuberUser).ToList<Dot>();
         }
 
         

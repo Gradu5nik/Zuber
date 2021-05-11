@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Zuber.CustomAtributes
 {
-    //sole purpose of this class to prevent users from using
-    //their personal data(email, phone, name) during registration
+    //sole purpose of this class to prevent users from 
+    //using their personal data(email, phone, name) during registration
     public class PasswordFoolproofAttribute : ValidationAttribute
     {
         private string OtherProperty { get; set; }

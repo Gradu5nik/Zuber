@@ -6,7 +6,14 @@
     "Description": "Eriksvej",
     "Time": "2021-05-10T09:00:00",
     "ZuberUserID": 2002,
-    "ZuberUser": null
+    "ZuberUser": {
+      "Id": 2002,
+      "Name": "gogis",
+      "Email": "gkatasev@gmail.com",
+      "PhoneNo": "+4591749926",
+      "Password": "AQAAAAEAACcQAAAAEGPMTsWTxt6EmYJEmE+c9hRkaDRDk6mhCsF8BDs4nwOhwq11Y+yIqXD30HaZfAI0Tw==",
+      "Driver": false
+    }
   },
   {
     "Id": 2002,
@@ -15,7 +22,14 @@
     "Description": "fotex",
     "Time": "2021-05-10T09:00:00",
     "ZuberUserID": 2002,
-    "ZuberUser": null
+    "ZuberUser": {
+      "Id": 2002,
+      "Name": "gogis",
+      "Email": "gkatasev@gmail.com",
+      "PhoneNo": "+4591749926",
+      "Password": "AQAAAAEAACcQAAAAEGPMTsWTxt6EmYJEmE+c9hRkaDRDk6mhCsF8BDs4nwOhwq11Y+yIqXD30HaZfAI0Tw==",
+      "Driver": false
+    }
   },
   {
     "Id": 2003,
@@ -24,6 +38,13 @@
     "Description": "kirke",
     "Time": "2021-05-10T09:00:00",
     "ZuberUserID": 2002,
-    "ZuberUser": null
+    "ZuberUser": {
+      "Id": 2002,
+      "Name": "gogis",
+      "Email": "gkatasev@gmail.com",
+      "PhoneNo": "+4591749926",
+      "Password": "AQAAAAEAACcQAAAAEGPMTsWTxt6EmYJEmE+c9hRkaDRDk6mhCsF8BDs4nwOhwq11Y+yIqXD30HaZfAI0Tw==",
+      "Driver": false
+    }
   }
 ]
