@@ -25,6 +25,10 @@
     }
     <h1 id="demo"></h1>*@
     <div id="map"></div>
+    
+
+
+
     <script>
 
 
@@ -58,12 +62,19 @@
                 }
                 @(Model.counter++)
             }*@
-            function createMarker(map, lat, long, url) {
+            function createMarker(map, dot) {
                 var marker = new google.maps.Marker({
-                    position: { lat: lat, lng: long },
+                    position: { lat: dot.Lat, lng: dot.Long },
                     map: map,
-                    url: '/GetProfile?id=' + url
+                    url: '/GetProfile?id=' + dot.ZuberUserID
                 });
+                var infoWindow = new google.maps.InfoWindow({
+                    content: '<h4>' + dot.ZuberUser.Name + '</h4><p style="text-align:left">' + dot.ZuberUser.PhoneNo + '<br>' + dot.ZuberUser.Email +'<br>'+dot.Description+'</p>'
+                })
+                marker.addListener("mouseover", () => {
+                    infoWindow.open(map, marker);
+                })
+                
                 google.maps.event.addListener(marker, 'click', function() {
                     window.location.href = this.url;
 
@@ -76,7 +87,7 @@
                 if (this.readyState == 4 && this.status == 200) {
                     var DotList = JSON.parse(this.responseText);
                     DotList.forEach((item, index, arr) => {
-                        createMarker(map, arr[index].Lat, arr[index].Long, arr[index].ZuberUserID);
+                        createMarker(map, arr[index], arr[index].ZuberUserID);
                     });
                 }
             };
