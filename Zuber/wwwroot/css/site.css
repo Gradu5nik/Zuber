@@ -36,6 +36,10 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
     text-align: center;
 }
 
+#input_Password {
+    text-align: center;
+}
+
 .fromm-control {
     display: block;
     width: 100%;
@@ -48,9 +52,8 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
     color: #495057;
     height: auto;
     border-radius: 0;
-    background-color: fff;
+    background-color: #fff;
     background-clip: padding-box;
-
 }
 
 
@@ -80,6 +83,7 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
 .container {
     text-align: center;
     position: center;
+    
 }
 
 
@@ -95,23 +99,19 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
     text-align: center;
 }
 
+
 .mid video {
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 }
-
-/* Provide sufficient contrast against white background */
-
-
-
-
-.btn-primary {
+        /* Provide sufficient contrast against white background */
+        .btn-primary {
     background: #000000;
     border-color: transparent;
     font-weight: 500;
