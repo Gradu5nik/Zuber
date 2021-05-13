@@ -24,8 +24,10 @@ namespace Zuber.Models
         [DataType(DataType.Time)]
         public DateTime Time { get; set; }
         [ForeignKey("ZuberUser")]
-        public int ZuberUserID { get; set; }
         [Required]
+        public int ZuberUserID { get; set; }
+        public bool Hidden { get; set; }
+        
         public ZuberUser ZuberUser { get; set; }
 
     }

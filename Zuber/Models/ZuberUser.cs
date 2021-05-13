@@ -32,8 +32,13 @@ namespace Zuber.Models
         
         public bool Driver { get; set; }
 
+        [ForeignKey("Ride")]
+        public int? RideId { get; set; }
+        public Ride? Ride { get; set; }
 
-        //public Ride Ride { get; set; }
-        
+        [ForeignKey("Dot")]
+        public int? DotId { get; set; }
+        public Dot? Dot { get; set; }
+
     }
 }
