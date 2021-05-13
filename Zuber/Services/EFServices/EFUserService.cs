@@ -56,13 +56,22 @@ namespace Zuber.Services.EFServices
             return service.Users.Where(x => x.Id == id).FirstOrDefault();
         }
 
-        public string PasswordHash(string userEmail, string password)
+        public static string PasswordHash(string userEmail, string password)
         {
             PasswordHasher<string> pw = new PasswordHasher<string>();
             string passwordHashed = pw.HashPassword(userEmail, password);
             return passwordHashed;
         }
-
-
+        
+        public static bool CheckHashedPassword(string email, string dbPassword, string password)
+        {
+            PasswordHasher<string> pw = new PasswordHasher<string>();
+            var verificationResult = pw.VerifyHashedPassword(email, dbPassword, password);
+            if (verificationResult == PasswordVerificationResult.Success)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
