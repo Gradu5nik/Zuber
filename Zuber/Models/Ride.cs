@@ -20,8 +20,9 @@ namespace Zuber.Models
         public DateTime TimeToFromZealand{get;set;}
         public bool ToZealand { get; set; }
 
-        [ForeignKey("ZuberUser")]
-        [Required]
-        public ZuberUser Driver { get; set; }
+        //[ForeignKey("ZuberUser")]
+        //[Required]
+        //public int DriverId { get; set; }
+        //public ZuberUser Driver { get; set; }
     }
 }
