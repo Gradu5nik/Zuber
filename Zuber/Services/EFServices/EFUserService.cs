@@ -34,6 +34,13 @@ namespace Zuber.Services.EFServices
             service.SaveChanges();
         }
 
+        public void GiveUserDot(ZuberUser user, int id)
+        {
+            user.DotId = id;
+            service.Users.Update(user);
+            service.SaveChanges();
+        }
+
         public List<ZuberUser> GetAllUsers()
         {
             return service.Users.ToList<ZuberUser>();

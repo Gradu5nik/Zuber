@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "Id": 1009,
+    "Lat": 55.63858,
+    "Long": 12.08255,
+    "Description": "gammel kirke",
+    "Time": "2021-05-13T12:00:00",
+    "ZuberUserID": 1011,
+    "Hidden": false,
+    "ZuberUser": {
+      "Id": 1011,
+      "Name": "gogis",
+      "Email": "asdf@asdf.com",
+      "PhoneNo": "+4591749926",
+      "Password": "AQAAAAEAACcQAAAAELcabRbNSS7ki5UzPwhkbneberTzvGo2B7mGB9GHoD7EG+4XS9M4yNAbzldE89wBLw==",
+      "Driver": false,
+      "RideId": null,
+      "Ride": null,
+      "DotId": 1009
+    }
+  }
+]

@@ -38,7 +38,6 @@ namespace Zuber.Models
 
         [ForeignKey("Dot")]
         public int? DotId { get; set; }
-        public Dot? Dot { get; set; }
 
     }
 }

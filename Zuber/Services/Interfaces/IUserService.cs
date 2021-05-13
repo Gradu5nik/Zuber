@@ -10,6 +10,8 @@ namespace Zuber.Services.Interfaces
     {
         public void AddZuberUser(ZuberUser user);
         public void UpdateZuberUser(ZuberUser user);
+
+        public void GiveUserDot(ZuberUser user,int id);
         public void DeleteZuberUser(string email);
         public List<ZuberUser> GetAllUsers();
         public ZuberUser GetZuberUser(string email);

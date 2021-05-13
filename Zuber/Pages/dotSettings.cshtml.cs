@@ -15,17 +15,18 @@ namespace Zuber.Pages
         public SingletonUser User;
         public IDotService dService;
 
+        public IUserService uService;
         public IRideService rService;
         [BindProperty]
         public Dot userDot{get;set;}
         [BindProperty]
         public Ride userRide { get; set; }
 
-        public dotSettingsModel(SingletonUser s, IDotService d, IRideService r) { 
+        public dotSettingsModel(SingletonUser s, IDotService d, IRideService r,IUserService u) { 
             User = s;
             dService = d;
             rService = r;
-            
+            uService = u;
         }
         public IActionResult OnGet()
         {
@@ -37,7 +38,7 @@ namespace Zuber.Pages
             if (!User.User.DotId.HasValue)
             {
                 userDot = new Dot();
-                userDot.ZuberUserID = User.User.Id;
+                //userDot.ZuberUserID = User.User.Id;
             }
             else { userDot = dService.GetDotById(User.User.DotId.Value); }
             if (!User.User.RideId.HasValue)
@@ -54,7 +55,18 @@ namespace Zuber.Pages
                 return Page();
             }
             userDot.ZuberUserID = User.User.Id;
-            dService.AddDot(userDot);
+            if (User.User.DotId.HasValue)
+            {
+                dService.UpdateDot(userDot);
+            }
+            else 
+            { 
+                dService.AddDot(userDot); 
+                Dot d = dService.GetDotByUserId(User.User.Id);
+                uService.GiveUserDot(User.User, d.Id);
+                User.Login(uService.GetZuberUserById(User.User.Id));
+            }
+            
             return RedirectToPage("Index");
         }
 

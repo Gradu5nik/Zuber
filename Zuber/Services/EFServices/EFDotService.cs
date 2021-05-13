@@ -37,7 +37,10 @@ namespace Zuber.Services.EFServices
             return service.Dots.Include(d=>d.ZuberUser).ToList<Dot>();
         }
 
-        
+        public Dot GetDotByUserId(int id)
+        {
+            return service.Dots.Where(x => x.ZuberUserID == id).FirstOrDefault();
+        }
 
         public Dot GetDotById(int id)
         {

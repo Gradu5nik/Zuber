@@ -135,8 +135,6 @@ namespace Zuber.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DotId");
-
                     b.HasIndex("RideId");
 
                     b.ToTable("Users");
@@ -172,15 +170,9 @@ namespace Zuber.Migrations
 
             modelBuilder.Entity("Zuber.Models.ZuberUser", b =>
                 {
-                    b.HasOne("Zuber.Models.Dot", "Dot")
-                        .WithMany()
-                        .HasForeignKey("DotId");
-
                     b.HasOne("Zuber.Models.Ride", "Ride")
                         .WithMany()
                         .HasForeignKey("RideId");
-
-                    b.Navigation("Dot");
 
                     b.Navigation("Ride");
                 });
