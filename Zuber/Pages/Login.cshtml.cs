@@ -30,7 +30,7 @@ namespace Zuber.Pages
         public IActionResult OnPost()
         {
             ZuberUser user = service.GetZuberUser(input.Email);
-            if (user != null && CheckHashedPassword(user.Email, user.Password, input.Password))
+            if (user != null && EFUserService.CheckHashedPassword(user.Email, user.Password, input.Password))
             {
                 User.Login(user);
                 //IdentityService.Identity.Login(user);
@@ -38,19 +38,6 @@ namespace Zuber.Pages
             }
             failedLogin = true;
             return Page();
-        }
-
-        public bool CheckHashedPassword(string email, string dbPassword, string password)
-        {
-            PasswordHasher<string> pw = new PasswordHasher<string>();
-            var verificationResult = pw.VerifyHashedPassword(email, dbPassword, password);
-            if (verificationResult == PasswordVerificationResult.Success)
-            {
-                return true;
-            }
-
-            return false;
-
         }
     }
 }

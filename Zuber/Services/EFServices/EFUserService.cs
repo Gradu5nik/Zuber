@@ -29,7 +29,6 @@ namespace Zuber.Services.EFServices
         }
         public void UpdateZuberUser(ZuberUser user)
         {
-            user.Password = PasswordHash(user.Email, user.Password);
             service.Users.Update(user);
             service.SaveChanges();
         }
