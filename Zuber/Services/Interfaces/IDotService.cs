@@ -13,5 +13,6 @@ namespace Zuber.Services.Interfaces
         public void DeleteDot(int id);
         public List<Dot> GetAllDots();
         public Dot GetDotById(int id);
+        public Dot GetDotByUserId(int id);
     }
 }
