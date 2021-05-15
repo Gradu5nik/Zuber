@@ -41,7 +41,7 @@ namespace Zuber.Pages
                 //userDot.ZuberUserID = User.User.Id;
             }
             else { userDot = dService.GetDotById(User.User.DotId.Value); }
-            if (!User.User.RideId.HasValue)
+            if (!User.User.RideId.HasValue && User.IsDriver)
             {
                 userRide = new Ride();  
             }

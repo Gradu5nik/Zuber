@@ -87,7 +87,9 @@
                 if (this.readyState == 4 && this.status == 200) {
                     var DotList = JSON.parse(this.responseText);
                     DotList.forEach((item, index, arr) => {
-                        createMarker(map, arr[index], arr[index].ZuberUserID);
+                        if (item.Hidden == false) {
+                            createMarker(map, arr[index], arr[index].ZuberUserID);
+                        }
                     });
                 }
             };
