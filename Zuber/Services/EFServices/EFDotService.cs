@@ -34,7 +34,7 @@ namespace Zuber.Services.EFServices
 
         public List<Dot> GetAllDots()
         {
-            return service.Dots.Include(d=>d.ZuberUser).ToList<Dot>();
+            return service.Dots.Include(d=>d.ZuberUser).Include(d=>d.ZuberUser.Ride).ToList<Dot>();
         }
 
         public Dot GetDotByUserId(int id)

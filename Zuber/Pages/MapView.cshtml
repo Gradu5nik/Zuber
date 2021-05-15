@@ -52,26 +52,22 @@
 
             });
 
-            @*@(Model.counter = 0)
-            for (let i = 0; i <@Model.Dots.Count(); i++) {
-                DotList[i] = {
-                    lat: @Model.Dots[Model.counter].Lat,
-                    long: @Model.Dots[Model.counter].Long,
-                    hour:@Model.Dots[Model.counter].Time.Hour,
-                    minute:@Model.Dots[Model.counter].Time.Minute,
-                    description:'@Model.Dots[Model.counter].Description'
-                }
-                @(Model.counter++)
-            }*@
             function createMarker(map, dot) {
                 var marker = new google.maps.Marker({
                     position: { lat: dot.Lat, lng: dot.Long },
                     map: map,
                     url: '/GetProfile?id=' + dot.ZuberUserID
                 });
+                if (dot.ZuberUser.Driver) {
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: '<h4>' + dot.ZuberUser.Name + '</h4><p style="text-align:left">' + dot.ZuberUser.PhoneNo + '<br>' + dot.ZuberUser.Email + '<br>' + dot.Description + '</p><p style="background-color: orange">' + dot.ZuberUser.Ride.PlacesRemaining + ' places remaining <br>' + dot.ZuberUser.Ride.CarDescription + '</p>'
+                    })
+                }
+                else {
                 var infoWindow = new google.maps.InfoWindow({
-                    content: '<h4>' + dot.ZuberUser.Name + '</h4><p style="text-align:left">' + dot.ZuberUser.PhoneNo + '<br>' + dot.ZuberUser.Email +'<br>'+dot.Description+'</p>'
+                    content: '<h4>' + dot.ZuberUser.Name + '</h4><p style="text-align:left">' + dot.ZuberUser.PhoneNo + '<br>' + dot.ZuberUser.Email + '<br>' + dot.Description + '</p>'
                 })
+                  }
                 marker.addListener("mouseover", () => {
                     infoWindow.open(map, marker);
                 })
@@ -89,7 +85,7 @@
                     var DotList = JSON.parse(this.responseText);
                     DotList.forEach((item, index, arr) => {
                         if (item.Hidden == false) {
-                            createMarker(map, arr[index], arr[index].ZuberUserID);
+                            createMarker(map, arr[index]);
                         }
                     });
                 }

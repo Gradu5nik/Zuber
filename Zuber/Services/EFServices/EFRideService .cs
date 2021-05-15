@@ -43,7 +43,10 @@ namespace Zuber.Services.EFServices
         {
             return service.Rides.Where(x => x.Id == id).FirstOrDefault();
         }
-        
+        public Ride GetRideByUserId(int id)
+        {
+            return service.Rides.Where(x => x.DriverId == id).FirstOrDefault();
+        }
 
 
 

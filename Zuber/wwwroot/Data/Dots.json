@@ -1,1 +1,47 @@
-[]
+[
+  {
+    "Id": 1,
+    "Lat": 55.642786,
+    "Long": 12.079673,
+    "Description": "fra domkirke",
+    "Time": "2021-05-15T09:00:00",
+    "ZuberUserID": 2,
+    "Hidden": false,
+    "ZuberUser": {
+      "Id": 2,
+      "Name": "Passanger",
+      "Email": "asdf@asdf.com",
+      "PhoneNo": "11112222",
+      "Password": "AQAAAAEAACcQAAAAEOHgNuEoKeN1G/hzAVUKV1cgprchKsjls68MFOAQTIyRwbyf1/KNntQhWZJLsk9CYw==",
+      "Driver": false,
+      "RideId": null,
+      "Ride": null,
+      "DotId": 1
+    }
+  },
+  {
+    "Id": 6,
+    "Lat": 55.644343,
+    "Long": 12.084301,
+    "Description": "driving from driving school",
+    "Time": "2021-05-15T08:30:00",
+    "ZuberUserID": 7,
+    "Hidden": false,
+    "ZuberUser": {
+      "Id": 7,
+      "Name": "Driver",
+      "Email": "driver@drive.com",
+      "PhoneNo": "654321",
+      "Password": "AQAAAAEAACcQAAAAECYCYxFolzWN4JPH80hJUsz6mDO1MxGh9xPHFsbGWvvSDnygYdV+wa7OgS0dspD2+g==",
+      "Driver": true,
+      "RideId": 5,
+      "Ride": {
+        "Id": 5,
+        "CarDescription": "Yellow opel",
+        "PlacesRemaining": 3,
+        "DriverId": 7
+      },
+      "DotId": 6
+    }
+  }
+]
