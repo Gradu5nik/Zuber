@@ -84,17 +84,11 @@ namespace Zuber.Migrations
                     b.Property<string>("CarDescription")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CurrentPassangers")
+                    b.Property<int>("DriverId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MaxPassangers")
+                    b.Property<int>("PlacesRemaining")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("TimeToFromZealand")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("ToZealand")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 

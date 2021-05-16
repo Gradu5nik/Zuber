@@ -41,11 +41,15 @@ namespace Zuber.Pages
                 //userDot.ZuberUserID = User.User.Id;
             }
             else { userDot = dService.GetDotById(User.User.DotId.Value); }
-            if (!User.User.RideId.HasValue)
+            if (User.IsDriver)
             {
-                userRide = new Ride();  
+                if(!User.User.RideId.HasValue)
+                   userRide = new Ride();
+                else { 
+                    userRide = rService.GetRideById(User.User.RideId.Value); 
+                }
             }
-            else { userRide = rService.GetRideById(User.User.RideId.Value); }
+            
             return Page();
         }
         public IActionResult OnPost()
@@ -66,7 +70,22 @@ namespace Zuber.Pages
                 uService.GiveUserDot(User.User, d.Id);
                 User.Login(uService.GetZuberUserById(User.User.Id));
             }
-            
+            if (User.IsDriver)
+            {
+                userRide.DriverId = User.User.Id;
+                if (User.User.RideId.HasValue)
+                {
+                    rService.UpdateRide(userRide);
+                }
+                else
+                {
+                    rService.AddRide(userRide);
+                    Ride r = rService.GetRideByUserId(User.User.Id);
+                    User.User.RideId = r.Id;
+                    uService.UpdateZuberUser(User.User);
+                    User.Login(uService.GetZuberUserById(User.User.Id));
+                }
+            }
             return RedirectToPage("Index");
         }
 

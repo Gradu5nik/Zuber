@@ -32,6 +32,21 @@
         <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.userDot.Hidden">
         <label class="custom-control-label" for="switch">do you want to hide your dot?</label>
     </div>
+    @if (Model.User.IsDriver)
+    {
+        <h3>Ride properties</h3>
+        <div class="form-group">
+            <label asp-for="@Model.userRide.PlacesRemaining" class="control-label"></label>
+            <input asp-for="@Model.userRide.PlacesRemaining" class="form-control" />
+            <span asp-validation-for="@Model.userRide.PlacesRemaining" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.userRide.CarDescription" class="control-label"></label>
+            <input asp-for="@Model.userRide.CarDescription" class="form-control" />
+            <span asp-validation-for="@Model.userRide.CarDescription" class="text-danger"></span>
+        </div>
+        
+    }
     <div class="form-group">
         <input type="submit" value="Save" asp-page-handler="Save" class="btn btn-primary" />
     </div>

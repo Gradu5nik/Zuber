@@ -13,5 +13,6 @@ namespace Zuber.Services.Interfaces
         public void DeleteRide(int id);
         public List<Ride> GetAllRides();
         public Ride GetRideById(int id);
+        public Ride GetRideByUserId(int id);
     }
 }

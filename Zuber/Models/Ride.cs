@@ -13,16 +13,15 @@ namespace Zuber.Models
         public int Id { get; set; }
         public string CarDescription { get; set; }
         [Required]
-        public int MaxPassangers { get; set; }
-        public int CurrentPassangers { get; set; }
-        [Required]
-        [DataType(DataType.Time)]
-        public DateTime TimeToFromZealand{get;set;}
-        public bool ToZealand { get; set; }
-
-        //[ForeignKey("ZuberUser")]
+        public int PlacesRemaining{ get; set; }
         //[Required]
-        //public int DriverId { get; set; }
+        //[DataType(DataType.Time)]
+        //public DateTime TimeToFromZealand{get;set;}
+        //public bool ToZealand { get; set; }
+
+        [ForeignKey("ZuberUser")]
+        [Required]
+        public int DriverId { get; set; }
         //public ZuberUser Driver { get; set; }
     }
 }
