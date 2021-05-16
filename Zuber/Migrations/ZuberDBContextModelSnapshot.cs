@@ -16,7 +16,7 @@ namespace Zuber.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.5")
+                .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Zuber.Models.Dot", b =>
@@ -29,6 +29,9 @@ namespace Zuber.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Hidden")
+                        .HasColumnType("bit");
 
                     b.Property<double>("Lat")
                         .HasColumnType("float");
@@ -93,12 +96,7 @@ namespace Zuber.Migrations
                     b.Property<bool>("ToZealand")
                         .HasColumnType("bit");
 
-                    b.Property<int>("ZuberUser")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ZuberUser");
 
                     b.ToTable("Rides");
                 });
@@ -109,6 +107,9 @@ namespace Zuber.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("DotId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Driver")
                         .HasColumnType("bit");
@@ -129,7 +130,12 @@ namespace Zuber.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("RideId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("RideId");
 
                     b.ToTable("Users");
                 });
@@ -162,15 +168,13 @@ namespace Zuber.Migrations
                     b.Navigation("ZuberUser");
                 });
 
-            modelBuilder.Entity("Zuber.Models.Ride", b =>
+            modelBuilder.Entity("Zuber.Models.ZuberUser", b =>
                 {
-                    b.HasOne("Zuber.Models.ZuberUser", "Driver")
+                    b.HasOne("Zuber.Models.Ride", "Ride")
                         .WithMany()
-                        .HasForeignKey("ZuberUser")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RideId");
 
-                    b.Navigation("Driver");
+                    b.Navigation("Ride");
                 });
 #pragma warning restore 612, 618
         }
