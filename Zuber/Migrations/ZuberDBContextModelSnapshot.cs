@@ -52,7 +52,7 @@ namespace Zuber.Migrations
                     b.ToTable("Dots");
                 });
 
-            modelBuilder.Entity("Zuber.Models.Passanger", b =>
+            modelBuilder.Entity("Zuber.Models.Passenger", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -71,7 +71,7 @@ namespace Zuber.Migrations
 
                     b.HasIndex("ZuberUserID");
 
-                    b.ToTable("Passangers");
+                    b.ToTable("Passengers");
                 });
 
             modelBuilder.Entity("Zuber.Models.Ride", b =>
@@ -145,7 +145,7 @@ namespace Zuber.Migrations
                     b.Navigation("ZuberUser");
                 });
 
-            modelBuilder.Entity("Zuber.Models.Passanger", b =>
+            modelBuilder.Entity("Zuber.Models.Passenger", b =>
                 {
                     b.HasOne("Zuber.Models.Ride", "Ride")
                         .WithMany()
