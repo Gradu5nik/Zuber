@@ -6,7 +6,7 @@
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="@Model.userDot.Id" />
-    <p>Please insert coordinates of the place when youll need to be picked up<br> you can look them up using <a href="https://www.google.dk/maps" target="_blank">Google maps</a></p>
+    <p>Please insert coordinates of the place where you want to be picked up <br/> You can input them manually or you can <br/> <a asp-page="MapView">Use the Map</a></p>
     <div class="form-group">
         <label asp-for="@Model.userDot.Lat" class="control-label"></label>
         <input asp-for="@Model.userDot.Lat" class="form-control" />

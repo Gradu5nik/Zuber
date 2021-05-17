@@ -28,7 +28,7 @@ namespace Zuber.Pages
             rService = r;
             uService = u;
         }
-        public IActionResult OnGet()
+        public IActionResult OnGet(double latitude, double longitude)
         {
             if (!User.SignedIn)
             {
@@ -39,8 +39,19 @@ namespace Zuber.Pages
             {
                 userDot = new Dot();
                 //userDot.ZuberUserID = User.User.Id;
+                userDot.Lat = latitude;
+                userDot.Long = longitude;
             }
-            else { userDot = dService.GetDotById(User.User.DotId.Value); }
+            else
+            {
+                userDot = dService.GetDotById(User.User.DotId.Value);
+                if (latitude != 0 && longitude != 0)
+                {
+                    userDot.Lat = latitude;
+                    userDot.Long = longitude;
+                }
+                
+            }
             if (User.IsDriver)
             {
                 if(!User.User.RideId.HasValue)
