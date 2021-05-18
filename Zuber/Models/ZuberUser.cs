@@ -21,7 +21,7 @@ namespace Zuber.Models
         public string Email { get; set; }
         [Phone]
         [Required]
-        [RegularExpression(@"^\+?[0-9]{3,15}$", ErrorMessage = "Please, enter valid phone number")]
+        [RegularExpression(@"^\+?[0-9]{6,11}$", ErrorMessage = "Please, enter valid phone number")]
         public string PhoneNo { get; set; }
         //password needs to be hashed
         [Required]
