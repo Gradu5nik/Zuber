@@ -10,6 +10,8 @@ a.navbar-brand {
     background: #000000;
     padding: 1rem 8rem;
     z-index: 1000;
+   
+
 }
 
 .navbar .navbar-brand {
@@ -38,6 +40,7 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
 #input_Password {
     text-align: center;
 }
+
 
 .fromm-control {
     display: block;
@@ -115,15 +118,44 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
 
 }
 
+
 .btn-primary:hover {
         background: #e6ab09;
         border-color: transparent;
 }
 
+
+.btn-danger {
+    background: #e75361b5 ;
+    border-color: transparent;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.btn-danger:hover {
+    background: #ff0000;
+    border-color: transparent;
+}
+
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #e6ab09;
     border-color: transparent;
+}
+
+.bg-light {
+    background-color: #5b4009d6 !important;
+}
+
+.bg-primary {
+    background-color: #e6ab09 !important;
+}
+
+.badge-primary {
+    background-color: #e6ab09;
 }
 
 /* Sticky footer styles
@@ -160,9 +192,12 @@ html {
   min-height: 100%;
 }
 
+
+
+
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
 .footer {
   position: absolute;
