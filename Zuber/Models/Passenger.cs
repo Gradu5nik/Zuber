@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Zuber.Models
 {
-    public class Passanger
+    public class Passenger
     {
         [Key]
         public int Id { get; set; }
@@ -20,8 +20,8 @@ namespace Zuber.Models
         public Ride Ride { get; set; }
         //[Required]
         //OnDeleteCascade removed from this property because SQL complains
-        //also made property nullabe to make on delete no action
-        // Therefore after deleting user we musst manually delet all passanger instances of the user
+        //also made property nullable to make on delete no action
+        // Therefore after deleting user we must manually delete all passenger instances of the user
         public ZuberUser? ZuberUser{get;set;}
 
     }

@@ -12,11 +12,11 @@ namespace Zuber.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        [RegularExpression(@"^\d+\.\d{0,6}$")]
+        //[RegularExpression(@"^\d+\.\d{0,16}$")]
         [Range(-90,90)]
         public double Lat { get; set; }
         [Required]
-        [RegularExpression(@"^\d+\.\d{0,6}$")]
+        //[RegularExpression(@"^\d+\.\d{0,16}$")]
         [Range(-180, 180)]
         public double Long { get; set; }
         [Required]

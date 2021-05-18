@@ -6,7 +6,7 @@
 <form method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <input type="hidden" asp-for="@Model.userDot.Id" />
-    <p>please insert coordinates of the place when youll need to be picked up<br> you can look them up using <a href="https://www.google.dk/maps">Google maps</a></p>
+    <p>Please insert coordinates of the place where you want to be picked up <br/> You can input them manually or you can <br/> <a asp-page="MapView">Use the Map</a></p>
     <div class="form-group">
         <label asp-for="@Model.userDot.Lat" class="control-label"></label>
         <input asp-for="@Model.userDot.Lat" class="form-control" />
@@ -32,6 +32,21 @@
         <input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.userDot.Hidden">
         <label class="custom-control-label" for="switch">do you want to hide your dot?</label>
     </div>
+    @if (Model.User.IsDriver)
+    {
+        <h3>Ride properties</h3>
+        <div class="form-group">
+            <label asp-for="@Model.userRide.PlacesRemaining" class="control-label"></label>
+            <input asp-for="@Model.userRide.PlacesRemaining" class="form-control" />
+            <span asp-validation-for="@Model.userRide.PlacesRemaining" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.userRide.CarDescription" class="control-label"></label>
+            <input asp-for="@Model.userRide.CarDescription" class="form-control" />
+            <span asp-validation-for="@Model.userRide.CarDescription" class="text-danger"></span>
+        </div>
+        
+    }
     <div class="form-group">
         <input type="submit" value="Save" asp-page-handler="Save" class="btn btn-primary" />
     </div>

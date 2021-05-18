@@ -28,7 +28,7 @@ namespace Zuber.Pages
             rService = r;
             uService = u;
         }
-        public IActionResult OnGet()
+        public IActionResult OnGet(double latitude, double longitude)
         {
             if (!User.SignedIn)
             {
@@ -39,13 +39,28 @@ namespace Zuber.Pages
             {
                 userDot = new Dot();
                 //userDot.ZuberUserID = User.User.Id;
+                userDot.Lat = latitude;
+                userDot.Long = longitude;
             }
-            else { userDot = dService.GetDotById(User.User.DotId.Value); }
-            if (!User.User.RideId.HasValue)
+            else
             {
-                userRide = new Ride();  
+                userDot = dService.GetDotById(User.User.DotId.Value);
+                if (latitude != 0 && longitude != 0)
+                {
+                    userDot.Lat = latitude;
+                    userDot.Long = longitude;
+                }
+                
             }
-            else { userRide = rService.GetRideById(User.User.RideId.Value); }
+            if (User.IsDriver)
+            {
+                if(!User.User.RideId.HasValue)
+                   userRide = new Ride();
+                else { 
+                    userRide = rService.GetRideById(User.User.RideId.Value); 
+                }
+            }
+            
             return Page();
         }
         public IActionResult OnPost()
@@ -66,7 +81,22 @@ namespace Zuber.Pages
                 uService.GiveUserDot(User.User, d.Id);
                 User.Login(uService.GetZuberUserById(User.User.Id));
             }
-            
+            if (User.IsDriver)
+            {
+                userRide.DriverId = User.User.Id;
+                if (User.User.RideId.HasValue)
+                {
+                    rService.UpdateRide(userRide);
+                }
+                else
+                {
+                    rService.AddRide(userRide);
+                    Ride r = rService.GetRideByUserId(User.User.Id);
+                    User.User.RideId = r.Id;
+                    uService.UpdateZuberUser(User.User);
+                    User.Login(uService.GetZuberUserById(User.User.Id));
+                }
+            }
             return RedirectToPage("Index");
         }
 
