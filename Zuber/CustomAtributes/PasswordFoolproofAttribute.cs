@@ -30,8 +30,24 @@ namespace Zuber.CustomAtributes
             var otherValue2 = otherPropertyInfo2.GetValue(validationContext.ObjectInstance);
             var otherPropertyInfo3 = validationContext.ObjectType.GetProperty(OtherProperty3);
             var otherValue3 = otherPropertyInfo3.GetValue(validationContext.ObjectInstance);
+            if (value == null)
+            {
+                value = string.Empty;
+            }
+            if (otherValue == null)
+            {
+                otherValue = string.Empty;
+            }
+            if (otherValue2 == null)
+            {
+                otherValue2 = string.Empty;
+            }
+            if (otherValue3 == null)
+            {
+                otherValue3 = string.Empty;
+            }
             // verify values
-            if (value.ToString().Equals(otherValue.ToString())||value.ToString().Equals(otherValue2.ToString())|| value.ToString().Equals(otherValue3.ToString()))
+            if ((value.ToString().Equals(otherValue.ToString())||value.ToString().Equals(otherValue2.ToString())|| value.ToString().Equals(otherValue3.ToString()))&&value!=string.Empty)
                 return new ValidationResult("We ask you to not use personal information as password for safety reasons");
             else
                 return ValidationResult.Success;
