@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "Id": 1,
+    "Lat": 55.63050363888106,
+    "Long": 12.08273419580077,
+    "Description": "no",
+    "Time": "2021-05-19T10:00:00",
+    "ZuberUserID": 1,
+    "Hidden": false,
+    "ZuberUser": {
+      "Id": 1,
+      "Name": "zia",
+      "Email": "ziaullahhassan8@gmail.com",
+      "PhoneNo": "71828972",
+      "Password": "AQAAAAEAACcQAAAAEGY1etULrAe0fd43bjYsMRN9IycnHVW5rJybCd+AnoDbqwt/Asq4RWuIbpXq/OxQIA==",
+      "Driver": true,
+      "RideId": 1,
+      "Ride": {
+        "Id": 1,
+        "CarDescription": null,
+        "PlacesRemaining": 0,
+        "DriverId": 1
+      },
+      "DotId": 1
+    }
+  }
+]
