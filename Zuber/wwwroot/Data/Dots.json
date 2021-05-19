@@ -1,26 +1,41 @@
 [
   {
     "Id": 1,
-    "Lat": 55.63050363888106,
-    "Long": 12.08273419580077,
-    "Description": "no",
-    "Time": "2021-05-19T10:00:00",
+    "Lat": 55.64551827389974,
+    "Long": 12.084714869877802,
+    "Description": "Ill be in flipflops and orange cap",
+    "Time": "2021-05-19T08:30:00",
     "ZuberUserID": 1,
     "Hidden": false,
     "ZuberUser": {
       "Id": 1,
-      "Name": "zia",
-      "Email": "ziaullahhassan8@gmail.com",
-      "PhoneNo": "71828972",
-      "Password": "AQAAAAEAACcQAAAAEGY1etULrAe0fd43bjYsMRN9IycnHVW5rJybCd+AnoDbqwt/Asq4RWuIbpXq/OxQIA==",
-      "Driver": true,
-      "RideId": 1,
-      "Ride": {
-        "Id": 1,
-        "CarDescription": null,
-        "PlacesRemaining": 0,
-        "DriverId": 1
-      },
+      "Name": "boba",
+      "Email": "bababa@baba.ba",
+      "PhoneNo": "0808080808",
+      "Password": "AQAAAAEAACcQAAAAEJh5kScDAaAH1yhHQ/c1nFSWgOk8MsDdx9+orjjLOc4BpQ46dr2jaRmLqb9EavAjOA==",
+      "Driver": false,
+      "RideId": null,
+      "Ride": null,
+      "DotId": 1
+    }
+  },
+  {
+    "Id": 3,
+    "Lat": 55.640464473061755,
+    "Long": 12.076202479883834,
+    "Description": "Ill be in flipflops and orange cap",
+    "Time": "2021-05-19T08:30:00",
+    "ZuberUserID": 1,
+    "Hidden": false,
+    "ZuberUser": {
+      "Id": 1,
+      "Name": "boba",
+      "Email": "bababa@baba.ba",
+      "PhoneNo": "0808080808",
+      "Password": "AQAAAAEAACcQAAAAEJh5kScDAaAH1yhHQ/c1nFSWgOk8MsDdx9+orjjLOc4BpQ46dr2jaRmLqb9EavAjOA==",
+      "Driver": false,
+      "RideId": null,
+      "Ride": null,
       "DotId": 1
     }
   }
