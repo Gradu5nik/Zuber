@@ -19,6 +19,7 @@
                 <input type="hidden" asp-for="@Model.editableUser.Id" />
                 <input type="hidden" asp-for="@Model.editableUser.Password" />
                 <input type="hidden" asp-for="@Model.editableUser.Email" />
+                <input type="hidden" asp-for="@Model.editableUser.DotId" />
                 <div class="col-md-10 mt-5 pt-5">
                     <div class="row z-depth-3">
                         <div class="col-sm-4 bg-dark rounded-left">
@@ -52,10 +53,10 @@
                                                     border-radius: 20rem;
                                                 }
                                         </style>
-                                        <input type="checkbox" data-toggle="switchbutton"  data-style="ios"  data-onstyle="dark"  data-onlabel="Driver" data-offlabel="Passenger" asp-for="@Model.editableUser.Driver">
+                                        <input type="checkbox" data-toggle="switchbutton" data-style="ios" data-onstyle="dark" data-onlabel="Driver" data-offlabel="Passenger" asp-for="@Model.editableUser.Driver">
 
                                         @*<input type="checkbox" class="custom-control-input" id="switch" asp-for="@Model.editableUser.Driver">
-                                            <label class="custom-control-label" for="switch">Passenger, Driver</label>*@
+                                <label class="custom-control-label" for="switch">Passenger, Driver</label>*@
                                     </div>
                                 </div>
                             </div>
