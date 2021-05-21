@@ -6,22 +6,156 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
+.navbar {
+    background: #000000;
+    padding: 1rem 8rem;
+    z-index: 1000;
+   
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
 }
 
+.navbar .navbar-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-child(n) > a {
+    color: #e6ab09;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+}
+
+body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-child(n) > a:hover {
+    color: #fff;
+}
+
+.mid .hero {
+    position:relative;
+}
+
+#input_Email {
+    text-align: center;
+}
+
+#input_Password {
+    text-align: center;
+}
+
+
+.fromm-control {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-color: #000000 !important;
+    border-width: 0 0 1px 0 !important;
+    padding: 0px !important;
+    color: #495057;
+    height: auto;
+    border-radius: 0;
+    background-color: #fff;
+    background-clip: padding-box;
+}
+
+.mid .hero h2 {
+    width: 100%;
+    font-weight: bold !important;
+    letter-spacing: 0.2px;
+    padding-top: 0.1rem;
+}
+
+.mid .hero p{
+    width: 55%;
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+    padding-bottom: 1.1rem;
+}
+.mid .hero a {
+    background: #000000;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    text-decoration: none
+}
+
+.container {
+    text-align: center;
+    position: center;
+    
+}
+
+.mid {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+
+.mid video {
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+        /* Provide sufficient contrast against white background */
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    background: #000000;
+    border-color: transparent;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    text-decoration: none;
+
 }
+
+
+.btn-primary:hover {
+        background: #e6ab09;
+        border-color: transparent;
+}
+
+
+.btn-danger {
+    background: #e75361b5 ;
+    border-color: transparent;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.btn-danger:hover {
+    background: #ff0000;
+    border-color: transparent;
+}
+
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #e6ab09;
+    border-color: transparent;
+}
+
+.bg-light {
+    background-color: #5b4009d6 !important;
+}
+
+.bg-primary {
+    background-color: #e6ab09 !important;
+}
+
+.badge-primary {
+    background-color: #e6ab09;
 }
 
 /* Sticky footer styles
@@ -58,9 +192,12 @@ html {
   min-height: 100%;
 }
 
+
+
+
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
 .footer {
   position: absolute;
@@ -68,4 +205,19 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+
+
+
+@keyframes text {
+    0% {
+        color: black;
+        margin-bottom: -40px;
+    }
+
+    30% {
+        letter-spacing: 25px;
+        margin-bottom:-40px;
+    }
 }

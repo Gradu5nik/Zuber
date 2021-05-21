@@ -13,5 +13,8 @@ namespace Zuber.Models
 
         }
         public virtual DbSet<ZuberUser> Users { get; set; }
+        public virtual DbSet<Dot> Dots { get; set; }
+        public virtual DbSet<Ride> Rides { get; set; }
+        public virtual DbSet<Passenger> Passengers { get; set; }
     }
 }

@@ -17,6 +17,11 @@ namespace Zuber.Services.EFServices
                 else return true;
             }
         }
+        public bool IsDriver
+        {
+            get { return User.Driver; }
+            //set { User.Driver = value; }
+        }
 
         public SingletonUser()
         {

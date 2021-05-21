@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Zuber.Models;
 using Zuber.Services.EFServices;
 using Zuber.Services.Interfaces;
+using Zuber.CustomAtributes;
 
 namespace Zuber.Pages
 {
@@ -16,25 +17,33 @@ namespace Zuber.Pages
         public class InputModel
         {
             [Required]
+            [RegularExpression(@"^[A-Za-z]+\s?[A-Za-z]*$",ErrorMessage ="Please, insert your name using only letters")]
             public string Name { get; set; }
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
+            [RegularExpression(@"^([\w\.\-]+)@([\w\-\.]+)((\.(\w){2,3})+)$", ErrorMessage = "Please, enter valid email adress")]
+            //[RegularExpression(@"^[A-Z0-9a-z._%+-]+@[A-Z0-9a-z.-]+\.[A-Za-z]{2,}$.", ErrorMessage = "Please, enter valid email adress")]
+            //[RegularExpression(@"^[A-Z0-9a-z._%+-]+@edu\.easj\.dk"),ErrorMessage ="Please, enter your Zealand email adress"] version for zealand students mails
+            //[RegularExpression(@"^[a-z]{4}[0-9]{4}@edu\.easj\.dk"),ErrorMessage ="Please, enter your Zealand email adress] stricter version for studentmails
             public string Email { get; set; }
             
             [Required]
             [Phone]
+            [RegularExpression(@"^\+?[0-9]{3,15}$", ErrorMessage = "Please, enter valid phone number")]
             public string PhoneNo { get; set; }
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
+            [PasswordFoolproof("Name","Email","PhoneNo")]
             public string Password { get; set; }
-
+            [Required]
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            public bool Driver { get; set; }
         }
         IUserService service;
         SingletonUser User;
@@ -60,9 +69,10 @@ namespace Zuber.Pages
             NewToDatabase.Email = newUser.Email;
             NewToDatabase.PhoneNo = newUser.PhoneNo;
             NewToDatabase.Password = newUser.Password;
+            NewToDatabase.Driver = newUser.Driver;
             service.AddZuberUser(NewToDatabase);
             User.Login(service.GetZuberUser(NewToDatabase.Email));
-            return RedirectToPage("Index");
+            return RedirectToPage("dotSettings");
         }
     }
 }
