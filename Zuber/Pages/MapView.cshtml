@@ -42,12 +42,13 @@
                 zoom: 14,
                 center: { lat: 55.630649, lng: 12.078271 }
             };
+            
             var map = new
                 google.maps.Map(document.getElementById('map'), options);
             var zealandMarker = new google.maps.Marker({
                 position: { lat: 55.630649, lng: 12.078271 },
                 map: map,
-                icon: 'https://www.4icu.org/i/logos-seals/18331.png'  //getting the current icon from web, probably should store it locally
+                icon: { url: '/Images/m6.png', scaledSize: new google.maps.Size(70, 70) }  
 
 
             });
@@ -66,11 +67,22 @@
             });
 
             function createMarker(map, dot) {
-                var marker = new google.maps.Marker({
-                    position: { lat: dot.Lat, lng: dot.Long },
-                    map: map,
-                    url: '/GetProfile?id=' + dot.ZuberUserID
-                });
+                if (dot.ZuberUser.Driver) {
+                    var marker = new google.maps.Marker({
+                        position: { lat: dot.Lat, lng: dot.Long },
+                        map: map,
+                        url: '/GetProfile?id=' + dot.ZuberUserID,
+                        icon: { url: '/Images/m2.png', scaledSize: new google.maps.Size(70, 70) }
+                    });
+                }
+                else {
+                    var marker = new google.maps.Marker({
+                        position: { lat: dot.Lat, lng: dot.Long },
+                        map: map,
+                        url: '/GetProfile?id=' + dot.ZuberUserID,
+                        icon: { url: '/Images/m5.png', scaledSize: new google.maps.Size(70, 70) }
+                    });
+                }
                 var mInfoWindow;
                 if (dot.ZuberUser.Driver) {
                     mInfoWindow = new google.maps.InfoWindow({

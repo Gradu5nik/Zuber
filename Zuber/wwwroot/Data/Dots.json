@@ -1,42 +1,22 @@
 [
   {
     "Id": 1,
-    "Lat": 55.63508709984707,
-    "Long": 12.057233897730514,
-    "Description": "i'M a fucking unicorn",
-    "Time": "2021-05-18T00:00:00",
-    "ZuberUserID": 2,
-    "Hidden": false,
-    "ZuberUser": {
-      "Id": 2,
-      "Name": "joe hose",
-      "Email": "joe@hotmail.com",
-      "PhoneNo": "1243534",
-      "Password": "AQAAAAEAACcQAAAAEEPZQh02FKAs0rs8AeX3bds1XyiK/A7SuXU8Q1sS82H+bEwr+bAu0I+7khCe+O+xSw==",
-      "Driver": false,
-      "RideId": null,
-      "Ride": null,
-      "DotId": 1
-    }
-  },
-  {
-    "Id": 2,
-    "Lat": 55.626510842601064,
-    "Long": 12.063542453333541,
-    "Description": "bla bla",
-    "Time": "2021-05-20T00:00:00",
+    "Lat": 55.64551827389974,
+    "Long": 12.084714869877802,
+    "Description": "Ill be in flipflops and orange cap",
+    "Time": "2021-05-19T08:30:00",
     "ZuberUserID": 1,
     "Hidden": false,
     "ZuberUser": {
       "Id": 1,
-      "Name": "gabor tornai",
-      "Email": "123@hotmail.com",
-      "PhoneNo": "654321",
-      "Password": "AQAAAAEAACcQAAAAEJGwvuWKsdQsx1jUwJiMngFFLdxs+RHD+cV6FzrbExz3QiDEeEopcmKx73zpvL0Asw==",
+      "Name": "boba",
+      "Email": "bababa@baba.ba",
+      "PhoneNo": "0808080808",
+      "Password": "AQAAAAEAACcQAAAAEJh5kScDAaAH1yhHQ/c1nFSWgOk8MsDdx9+orjjLOc4BpQ46dr2jaRmLqb9EavAjOA==",
       "Driver": false,
       "RideId": null,
       "Ride": null,
-      "DotId": 2
+      "DotId": 1
     }
   }
 ]
