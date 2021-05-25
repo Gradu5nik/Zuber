@@ -18,5 +18,25 @@
       "Ride": null,
       "DotId": 1
     }
+  },
+  {
+    "Id": 2,
+    "Lat": 55.626510842601064,
+    "Long": 12.063542453333541,
+    "Description": "bla bla",
+    "Time": "2021-05-20T00:00:00",
+    "ZuberUserID": 1,
+    "Hidden": false,
+    "ZuberUser": {
+      "Id": 1,
+      "Name": "gabor tornai",
+      "Email": "123@hotmail.com",
+      "PhoneNo": "654321",
+      "Password": "AQAAAAEAACcQAAAAEJGwvuWKsdQsx1jUwJiMngFFLdxs+RHD+cV6FzrbExz3QiDEeEopcmKx73zpvL0Asw==",
+      "Driver": false,
+      "RideId": null,
+      "Ride": null,
+      "DotId": 2
+    }
   }
 ]
