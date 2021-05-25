@@ -18,22 +18,22 @@
         }
     </style>
 </head>
-<body>
+<body style="background-image: url(/Images/22.jpg); background-size: cover; ">
     @*<h1>Zuber Map demo</h1>
-    @foreach (var dot in Model.Dots)
-    {
-        <h1>@dot.Lat , @dot.Long</h1>
-    }
-    <h1 id="demo"></h1>*@
+        @foreach (var dot in Model.Dots)
+        {
+            <h1>@dot.Lat , @dot.Long</h1>
+        }
+        <h1 id="demo"></h1>*@
     <div id="map"></div>
-    
+
 
 
 
     <script>
 
 
-       //Initiates map at 14x zoom and centers it around Zealand
+        //Initiates map at 14x zoom and centers it around Zealand
         function initMap() {
 
 
@@ -83,12 +83,12 @@
                 }
                 marker.addListener("mouseover",
                     () => {
-                        
+
                         mInfoWindow.open(map, marker);
                     });
                 marker.addListener("click",
                     () => {
-                        
+
                         window.location.href = marker.url;
                     });
 
@@ -109,7 +109,7 @@
             xmlhttp.open("GET", "/Data/Dots.json", true);
             xmlhttp.send();
 
-            
+
         }
 
     </script>
