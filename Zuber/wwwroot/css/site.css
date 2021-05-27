@@ -23,14 +23,19 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
     color: #e6ab09;
     font-size: 1.1rem;
     padding: 0 1rem;
+   
 }
 
 body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-child(n) > a:hover {
     color: #fff;
 }
 
+
+
+
 .mid .hero {
-    position:relative;
+    position: relative;
+    
 }
 
 #input_Email {
@@ -63,6 +68,7 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
     font-weight: bold !important;
     letter-spacing: 0.2px;
     padding-top: 0.1rem;
+    
 }
 
 .mid .hero p{
@@ -107,6 +113,10 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
         left: 50%;
         transform: translate(-50%, -50%);
 }
+
+
+
+
         /* Provide sufficient contrast against white background */
 .btn-primary {
     background: #000000;
@@ -118,10 +128,13 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
 
 }
 
+.btn-primary:active {
+    background: #e6ab09;
+}
 
 .btn-primary:hover {
         background: #e6ab09;
-        border-color: transparent;
+    border-color: transparent;
 }
 
 
@@ -138,6 +151,20 @@ body > header > nav > div > div > ul.navbar-nav.mx-auto.mb-2.mb-lg-0 > li:nth-ch
     background: #ff0000;
     border-color: transparent;
 }
+
+.btn-group-lg {
+    background: #b0b0b0;
+    border-color: transparent;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    text-decoration: none
+}
+
+    .btn-group-lg:hover {
+        background: #4a4a4a;
+        border-color: transparent;
+    }
 
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
