@@ -52,6 +52,11 @@ namespace Zuber.Pages
 
             service.UpdateZuberUser(editableUser);
             User.Login(editableUser);
+            if (editableUser.Driver)
+            {
+                return RedirectToPage("dotSettings");
+            }
+
             return RedirectToPage("Index");
         }
 
