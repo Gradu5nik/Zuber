@@ -34,5 +34,9 @@ namespace Zuber.Pages
             //}
             return Page();
         }
+        public IActionResult OnPost()
+        {
+            return Page();
+        }
     }
 }

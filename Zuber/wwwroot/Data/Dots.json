@@ -1,22 +1,47 @@
 [
   {
     "Id": 1,
-    "Lat": 55.64551827389974,
-    "Long": 12.084714869877802,
-    "Description": "Ill be in flipflops and orange cap",
-    "Time": "2021-05-19T08:30:00",
+    "Lat": 55.643237062762985,
+    "Long": 12.082985250883253,
+    "Description": "Somwhere near school",
+    "Time": "2021-06-08T09:00:00",
     "ZuberUserID": 1,
     "Hidden": false,
     "ZuberUser": {
       "Id": 1,
-      "Name": "boba",
-      "Email": "bababa@baba.ba",
-      "PhoneNo": "0808080808",
-      "Password": "AQAAAAEAACcQAAAAEJh5kScDAaAH1yhHQ/c1nFSWgOk8MsDdx9+orjjLOc4BpQ46dr2jaRmLqb9EavAjOA==",
+      "Name": "gogis",
+      "Email": "asdf@asdf.com",
+      "PhoneNo": "22334455",
+      "Password": "AQAAAAEAACcQAAAAEAXjoYRFHsvr4Zi9Hl8TjnaRnww+klvd2I+pS1dB58aTRz3aC3W92Kojkfm2CdZ4PA==",
       "Driver": false,
       "RideId": null,
       "Ride": null,
       "DotId": 1
+    }
+  },
+  {
+    "Id": 2,
+    "Lat": 55.642077583613,
+    "Long": 12.10587632305033,
+    "Description": "wanna ride?",
+    "Time": "2021-06-08T12:00:00",
+    "ZuberUserID": 2,
+    "Hidden": false,
+    "ZuberUser": {
+      "Id": 2,
+      "Name": "Driver",
+      "Email": "driver@drive.com",
+      "PhoneNo": "55443322",
+      "Password": "AQAAAAEAACcQAAAAEMw+ae1I7cUBhwQo7ms9ewwWAozTo1l+8auNd8Im+XkgZfTcE8YHVKae6orBufwf8g==",
+      "Driver": true,
+      "RideId": 1,
+      "Ride": {
+        "Id": 1,
+        "CarDescription": "Yellow opel",
+        "PlacesRemaining": 3,
+        "DriverId": 2
+      },
+      "DotId": 2
     }
   }
 ]

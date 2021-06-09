@@ -22,6 +22,7 @@ namespace Zuber.Models
         [ForeignKey("ZuberUser")]
         [Required]
         public int DriverId { get; set; }
-        //public ZuberUser Driver { get; set; }
+        public ZuberUser Driver { get; set; }
+
     }
 }

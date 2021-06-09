@@ -1,0 +1,39 @@
+﻿@page
+@model Zuber.Pages.MyInvitesModel
+@{
+}
+<h4>My invites</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Driver's Name
+            </th>
+            <th>
+                Ride Description
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (Model.MyInvites.Count() != 0)
+        {
+            @foreach (var item in Model.MyInvites)
+            {
+        <tr>
+            <td>
+                @item.Ride.Driver.Name
+            </td>
+            <td>
+                @item.Ride.CarDescription
+            </td>
+            <td>
+                <form asp-page-handler="Accept" method="post" asp-route-id="@item.Id"><button style="color:green">Accept</button></form>
+                <form asp-page-handler="Decline" method="post" asp-route-id="@item.Id"><button style="color:red">Decline</button></form>
+            </td>
+        </tr>
+            }
+        }
+</table>

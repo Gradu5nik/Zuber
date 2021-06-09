@@ -52,6 +52,28 @@ namespace Zuber.Migrations
                     b.ToTable("Dots");
                 });
 
+            modelBuilder.Entity("Zuber.Models.Invite", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("RideID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ZuberUserID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RideID");
+
+                    b.HasIndex("ZuberUserID");
+
+                    b.ToTable("Invites");
+                });
+
             modelBuilder.Entity("Zuber.Models.Passenger", b =>
                 {
                     b.Property<int>("Id")
@@ -141,6 +163,23 @@ namespace Zuber.Migrations
                         .HasForeignKey("ZuberUserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ZuberUser");
+                });
+
+            modelBuilder.Entity("Zuber.Models.Invite", b =>
+                {
+                    b.HasOne("Zuber.Models.Ride", "Ride")
+                        .WithMany()
+                        .HasForeignKey("RideID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Zuber.Models.ZuberUser", "ZuberUser")
+                        .WithMany()
+                        .HasForeignKey("ZuberUserID");
+
+                    b.Navigation("Ride");
 
                     b.Navigation("ZuberUser");
                 });
