@@ -10,11 +10,12 @@ namespace Zuber.Models
     public class Passenger
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [ForeignKey("Ride")]
         public int RideID { get; set; }
         [ForeignKey("ZuberUser")]
-        public int? ZuberUserID { get; set; }
+        public int ZuberUserID { get; set; }
 
         [Required]
         public Ride Ride { get; set; }
@@ -22,7 +23,7 @@ namespace Zuber.Models
         //OnDeleteCascade removed from this property because SQL complains
         //also made property nullable to make on delete no action
         // Therefore after deleting user we must manually delete all passenger instances of the user
-        public ZuberUser? ZuberUser{get;set;}
+        public ZuberUser ZuberUser{get;set;}
 
     }
 }

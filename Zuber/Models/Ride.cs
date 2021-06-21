@@ -10,6 +10,7 @@ namespace Zuber.Models
     public class Ride
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string CarDescription { get; set; }
         [Required]
@@ -22,6 +23,7 @@ namespace Zuber.Models
         [ForeignKey("ZuberUser")]
         [Required]
         public int DriverId { get; set; }
+        [NotMapped]
         public ZuberUser Driver { get; set; }
 
     }

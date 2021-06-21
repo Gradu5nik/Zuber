@@ -2,8 +2,26 @@
 @model Zuber.Pages.MyInvitesModel
 @{
 }
-<h4>My invites</h4>
 
+@*@{
+
+        if (!Model.User.IsDriver)
+        {
+            if (true)
+            {
+                <h2>Accepted invite:@Model.userService.GetZuberUserById(Model.rideService.GetRideByUserId(Model.User.User.Id).DriverId).Name's ride</h2>
+
+            }
+            else
+            {
+                <h2>Accepted invite: None</h2>
+            }
+        }
+    }*@
+<hr />
+<h3>@Model.Message</h3>
+<hr />
+<h4>Pending invites</h4>
 <table class="table">
     <thead>
         <tr>
@@ -11,9 +29,8 @@
                 Driver's Name
             </th>
             <th>
-                Ride Description
+                Car Description
             </th>
-
         </tr>
     </thead>
     <tbody>
@@ -22,18 +39,56 @@
         {
             @foreach (var item in Model.MyInvites)
             {
-        <tr>
-            <td>
-                @item.Ride.Driver.Name
-            </td>
-            <td>
-                @item.Ride.CarDescription
-            </td>
-            <td>
-                <form asp-page-handler="Accept" method="post" asp-route-id="@item.Id"><button style="color:green">Accept</button></form>
-                <form asp-page-handler="Decline" method="post" asp-route-id="@item.Id"><button style="color:red">Decline</button></form>
-            </td>
-        </tr>
+                <tr>
+                    <td>
+                        @item.Ride.Driver.Name
+                    </td>
+                    <td>
+                        @item.Ride.CarDescription
+                    </td>
+                    <td>
+                        <form asp-page-handler="Accept" method="post" asp-route-id="@item.Id"><button style="color:green">Accept</button></form>
+                        <form asp-page-handler="Decline" method="post" asp-route-id="@item.Id"><button style="color:red">Decline</button></form>
+                    </td>
+                </tr>
             }
         }
 </table>
+
+
+@{
+
+    if (Model.User.IsDriver)
+    {
+        <h4>My ride's passengers</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Passenger ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var passenger in Model.RidePassengers)
+                    {
+                        <tr>
+                            <td>
+                                @Model.userService.GetZuberUserById(passenger.ZuberUserID).Id
+                            </td>
+                            <td>
+                                @Model.userService.GetZuberUserById(passenger.ZuberUserID).Name
+                            </td>
+                        </tr>
+                    }
+
+                }
+
+            </tbody>
+        </table>
+    }
+}

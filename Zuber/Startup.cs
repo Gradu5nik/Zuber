@@ -33,6 +33,7 @@ namespace Zuber
             services.AddTransient<IRideService, EFRideService>();
             services.AddTransient<JsonDotService, JsonDotService>();
             services.AddTransient<IInviteService, EFInviteService>();
+            services.AddTransient<IPassengerService, EFPassengerService>();
             services.AddSingleton<SingletonUser, SingletonUser>();
             services.AddDbContext<ZuberDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ZuberContext")));
         }

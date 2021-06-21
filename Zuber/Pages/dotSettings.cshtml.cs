@@ -83,10 +83,13 @@ namespace Zuber.Pages
             }
             if (User.IsDriver)
             {
+                userRide.Driver = User.User;
                 userRide.DriverId = User.User.Id;
                 if (User.User.RideId.HasValue)
                 {
                     rService.UpdateRide(userRide);
+                    User.User.Ride = userRide;
+                    User.User.RideId = userRide.Id;
                 }
                 else
                 {

@@ -34,7 +34,7 @@ namespace Zuber.Services.EFServices
 
         public List<Invite> GetAllInvitesForUser(int id)
         {
-            return service.Invites.Where(x => x.ZuberUserID == id).Include(d => d.Ride).Include(d => d.Ride.Driver).ToList<Invite>();
+            return service.Invites.Where(x => x.ZuberUserID == id).ToList<Invite>();
         }
         public List<Invite> GetAllInvitesForRide(int id)
         {
